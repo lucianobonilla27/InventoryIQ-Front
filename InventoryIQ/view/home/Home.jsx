@@ -1,8 +1,10 @@
 import CardHome from "../../src/components/cards/CardHome"
 import { Row, Col, Container } from "react-bootstrap";
-import productos from "../../src/components/productos";
+import { useContext } from "react";
+import { ProductosProvider } from "../../src/context/ProductsContext";
 
 const Home = () => {
+  const { productos } = useContext(ProductosProvider)
 
   return (
     <>
@@ -26,28 +28,28 @@ const Home = () => {
             </form>
           </Col>
         </Row>
+
+        <div className="row justify-content-center">
+
+          {productos.length == 0 ? <h3>No hay productos disponibles</h3> :
+            productos.map(producto => (
+              <CardHome key={producto.id}
+                id={producto.id}
+                nombre={producto.nombre}
+                descripcion={producto.descripcion}
+                imagenUrl={producto.imagenUrl}
+                cantidad={producto.cantidad}
+                categoria={producto.categoria}
+              />
+
+            ))
+          }
+
+
+        </div>
+
+
       </Container>
-      <div className="row justify-content-center">
-
-        {productos.length == 0 ? <h3>No hay productos disponibles</h3> :
-          productos.map(producto => (
-            <CardHome
-              id={producto.id}
-              nombre={producto.nombre}
-              descripcion={producto.descripcion}
-              imagenUrl={producto.imagenUrl}
-              cantidad={producto.cantidad}
-              categoria={producto.categoria}
-            />
-
-          ))
-        }
-
-
-      </div>
-
-
-
 
     </>
   )
