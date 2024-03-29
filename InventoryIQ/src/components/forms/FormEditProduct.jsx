@@ -3,71 +3,47 @@ import { ProductosProvider } from "../../context/ProductsContext";
 import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const FormProductos = () => {
-    const { addProductos } = useContext(ProductosProvider);
+const FormEditProduct = ({ editProducto, handleClose }) => {
+    const { editarProducto } = useContext(ProductosProvider);
 
     const [producto, setProducto] = useState(
         {
-            id: crypto.randomUUID(),
-            nombre: "",
-            descripcion: "",
-            imagenUrl: "",
-            cantidad: 0,
-            categoria: "",
-            fecha: new Date().toISOString().slice(0, 10) // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
+            id: editProducto.id,
+            nombre: editProducto.nombre,
+            descripcion: editProducto.descripcion,
+            imagenUrl: editProducto.imagenUrl,
+            cantidad: editProducto.cantidad,
+            categoria: editProducto.categoria,
+            fecha: editProducto.fecha
         }
     )
 
     const handleChange = (e) => {
         setProducto({
-            ...producto, // recuperar los datos que tenemos actualmente en el estado.
-            [e.target.name]: e.target.value, // Actualizar el estado con el nuevo valor
+            ...producto,
+            [e.target.name]: e.target.value,
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Utiliza la URL del imagen proporcionada por el producto, o la imagen predeterminada si está en blanco
-        const imagen = producto.imagenUrl.trim() !== "" ? producto.imagenUrl : "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
+        editarProducto(producto)
 
-        // Agrega el producto al contexto
-        addProductos({
-            ...producto,
-            id: crypto.randomUUID(),
-            imagenUrl: imagen
-        });
+        handleClose()
 
-        // Mostrar SweetAlert al agregar producto
         Swal.fire({
-            title: 'Producto creado',
-            text: 'El producto se ha creado correctamente.',
+            title: 'Producto editado',
+            text: 'El producto se ha editado correctamente.',
             icon: 'success',
             confirmButtonText: 'Aceptar'
         });
 
-        // Reinicia el estado para el próximo producto
-        setProducto({
-            id: crypto.randomUUID(),
-            nombre: "",
-            descripcion: "",
-            imagenUrl: "",
-            cantidad: 0,
-            categoria: "",
-            fecha: new Date().toISOString().slice(0, 10) // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
-        });
-    };
 
-    // Función para validar el formato de fecha "YYYY-MM-DD"
-    const isValidDate = (dateString) => {
-        // Validación del formato de fecha "YYYY-MM-DD"
-        const regex = /^\d{4}-\d{2}-\d{2}$/;
-        return regex.test(dateString);
-    };
 
+    }
     return (
         <>
-
             <Form onSubmit={handleSubmit} style={{ backgroundColor: '#DDE6ED', padding: '20px', borderRadius: '8px' }}>
                 <Row className="text-center">
                     <Col>
@@ -120,7 +96,6 @@ const FormProductos = () => {
                                     El formato de fecha debe ser YYYY-MM-DD.
                                 </Form.Control.Feedback>
                             )}
-
                         </Form.Group>
                     </Col>
                 </Row>
@@ -178,16 +153,14 @@ const FormProductos = () => {
                 <Row>
                     <Col md={12} className="text-center">
                         <Button variant="primary" type="submit">
-                            Agregar
+                            Guardar
                         </Button>
                     </Col>
 
                 </Row>
             </Form>
-
-
         </>
     )
 }
 
-export default FormProductos
+export default FormEditProduct

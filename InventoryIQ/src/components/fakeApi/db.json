@@ -1,16 +1,16 @@
 {
   "productos": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Fideos Marolio",
       "descripcion": "Spaguetti",
       "imagenUrl": "https://voyporvos.com.ar/wp-content/uploads/2022/02/Fideos-Marolio-X-500-Gs-Spaghetti.webp",
-      "cantidad": 10,
+      "cantidad": "12",
       "categoria": "Pastas",
       "fecha": "2024-03-29"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Coca-Cola",
       "descripcion": "2.25 litros",
       "imagenUrl": "https://dcdn.mitiendanube.com/stores/001/108/127/products/coca-cola-1-751-43573b69cf1871154d16297650173840-480-0.png",
@@ -19,7 +19,7 @@
       "fecha": "2024-03-29"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Pepsi",
       "descripcion": "1.5 litros",
       "imagenUrl": "https://m.media-amazon.com/images/S/aplus-media/sota/12db253b-142b-43d7-ade2-d5e67d5221f7.__CR0,0,300,300_PT0_SX300_V1___.png",
@@ -28,7 +28,7 @@
       "fecha": "2024-03-29"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Arroz Gallo",
       "descripcion": "Arroz blanco",
       "imagenUrl": "https://www.recetasgallo.com.ar/wp-content/uploads/2017/03/render-oro-2023.png",
@@ -37,7 +37,7 @@
       "fecha": "2024-03-29"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Leche La Serenísima",
       "descripcion": "Entera",
       "imagenUrl": "https://dcdn.mitiendanube.com/stores/001/108/127/products/la-serenisima-larga-vida-carton-enterabyb1-a039b493d7e8f12b6715888519393780-640-0.png",
@@ -46,7 +46,7 @@
       "fecha": "2024-03-29"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Pan Bimbo",
       "descripcion": "Pan de molde blanco",
       "imagenUrl": "https://www.bimbo.es/uploads/bimbocorp/BIMBO_GRANDE_2023.png?7",
@@ -55,7 +55,7 @@
       "fecha": "2024-03-29"
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "Yogurt Yoplait",
       "descripcion": "Frutilla",
       "imagenUrl": "https://www.yoplait.com/_next/image?url=https%3A%2F%2Fprodcontent.yoplait.com%2Fwp-content%2Fuploads%2F2019%2F08%2FYoplait-Original-Strawberry-Yogurt-460x460-1.png&w=1024&q=75",
@@ -64,7 +64,7 @@
       "fecha": "2024-03-29"
     },
     {
-      "id": 8,
+      "id": "8",
       "nombre": "Jugo de naranja",
       "descripcion": "Natural exprimido",
       "imagenUrl": "https://acdn.mitiendanube.com/stores/001/157/846/products/citric-naranja-tetra-500ml1-f6a1b4aef79d60a75416319875361481-1024-1024.png",
