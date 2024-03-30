@@ -28,6 +28,19 @@ const FormEditProduct = ({ editProducto, handleClose }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Validar que la cantidad sea un número positivo
+        if (producto.cantidad < 0 || isNaN(producto.cantidad)) {
+            alert('La cantidad debe ser un número positivo.');
+            return;
+        }
+
+        // Validar el formato de la fecha
+        const fechaPattern = /^\d{4}-\d{2}-\d{2}$/;
+        if (!fechaPattern.test(producto.fecha)) {
+            alert('El formato de la fecha debe ser "YYYY-MM-DD".');
+            return;
+        }
+
         editarProducto(producto)
 
         handleClose()
@@ -38,10 +51,15 @@ const FormEditProduct = ({ editProducto, handleClose }) => {
             icon: 'success',
             confirmButtonText: 'Aceptar'
         });
-
-
-
     }
+
+    // Función para validar el formato de fecha "YYYY-MM-DD"
+    const isValidDate = (dateString) => {
+        // Validación del formato de fecha "YYYY-MM-DD"
+        const regex = /^\d{4}-\d{2}-\d{2}$/;
+        return regex.test(dateString);
+    };
+
     return (
         <>
             <Form onSubmit={handleSubmit} style={{ backgroundColor: '#DDE6ED', padding: '20px', borderRadius: '8px' }}>
@@ -115,7 +133,13 @@ const FormEditProduct = ({ editProducto, handleClose }) => {
                                 <option value="Bebidas">Bebidas</option>
                                 <option value="Pastas">Pastas</option>
                                 <option value="Lacteos">Lácteos</option>
-                                {/* Agregar mas opciones */}
+                                <option value="Panadería">Panadería</option>
+                                <option value="Granos">Granos</option>
+                                <option value="Frutas">Frutas</option>
+                                <option value="Verduras">Verduras</option>
+                                <option value="Carnes">Carnes</option>
+                                <option value="Snacks">Snacks</option>
+
                             </Form.Control>
                         </Form.Group>
                     </Col>

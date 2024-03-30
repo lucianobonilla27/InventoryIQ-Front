@@ -28,14 +28,30 @@ const FormProductos = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Utiliza la URL del imagen proporcionada por el producto, o la imagen predeterminada si está en blanco
-        const imagen = producto.imagenUrl.trim() !== "" ? producto.imagenUrl : "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
+        // Validar que la cantidad sea un número positivo
+        if (producto.cantidad < 0 || isNaN(producto.cantidad)) {
+            alert('La cantidad debe ser un número positivo.');
+            return;
+        }
+
+        // Validar el formato de la fecha
+        const fechaPattern = /^\d{4}-\d{2}-\d{2}$/;
+        if (!fechaPattern.test(producto.fecha)) {
+            alert('El formato de la fecha debe ser "YYYY-MM-DD".');
+            return;
+        }
+
+        // Utiliza la URL de la imagen proporcionada por el producto, o la imagen predeterminada si está en blanco
+        const imagen =
+            producto.imagenUrl.trim() !== ''
+                ? producto.imagenUrl
+                : 'https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
 
         // Agrega el producto al contexto
         addProductos({
             ...producto,
             id: crypto.randomUUID(),
-            imagenUrl: imagen
+            imagenUrl: imagen,
         });
 
         // Mostrar SweetAlert al agregar producto
@@ -43,20 +59,21 @@ const FormProductos = () => {
             title: 'Producto creado',
             text: 'El producto se ha creado correctamente.',
             icon: 'success',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
         });
 
         // Reinicia el estado para el próximo producto
         setProducto({
             id: crypto.randomUUID(),
-            nombre: "",
-            descripcion: "",
-            imagenUrl: "",
+            nombre: '',
+            descripcion: '',
+            imagenUrl: '',
             cantidad: 0,
-            categoria: "",
-            fecha: new Date().toISOString().slice(0, 10) // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
+            categoria: '',
+            fecha: new Date().toISOString().slice(0, 10), // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
         });
     };
+
 
     // Función para validar el formato de fecha "YYYY-MM-DD"
     const isValidDate = (dateString) => {
@@ -140,7 +157,13 @@ const FormProductos = () => {
                                 <option value="Bebidas">Bebidas</option>
                                 <option value="Pastas">Pastas</option>
                                 <option value="Lacteos">Lácteos</option>
-                                {/* Agregar mas opciones */}
+                                <option value="Panadería">Panadería</option>
+                                <option value="Granos">Granos</option>
+                                <option value="Frutas">Frutas</option>
+                                <option value="Verduras">Verduras</option>
+                                <option value="Carnes">Carnes</option>
+                                <option value="Snacks">Snacks</option>
+
                             </Form.Control>
                         </Form.Group>
                     </Col>
