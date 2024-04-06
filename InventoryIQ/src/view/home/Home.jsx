@@ -1,8 +1,8 @@
 import { useState } from "react";
-import CardHome from "../../src/components/cards/CardHome";
+import CardHome from "../../components/cards/CardHome";
 import { Row, Col, Container, Form } from "react-bootstrap";
 import { useContext } from "react";
-import { ProductosProvider } from "../../src/context/ProductsContext";
+import { ProductosProvider } from "../../context/ProductsContext";
 
 
 const Home = () => {

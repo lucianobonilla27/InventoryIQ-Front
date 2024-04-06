@@ -1,6 +1,6 @@
-import FormProductos from "../../src/components/forms/FormProductos"
+import FormProductos from "../../components/forms/FormProductos"
 import { Container } from "react-bootstrap"
-import TablaProductos from "../../src/components/tablas/TablaProductos"
+import TablaProductos from "../../components/tablas/TablaProductos"
 
 const admin = () => {
   return (
