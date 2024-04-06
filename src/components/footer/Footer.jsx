@@ -6,41 +6,41 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <Container fluid className="footer-container container-fluid">
-      <Row fluid className="justify-content-space-between">
-        <Col fluid>
+    <Container fluid= 'true' className="footer-container container-fluid">
+      <Row fluid= 'true' className="justify-content-space-between">
+        <Col fluid= 'true'>
           <Card style={{ width: '100%', height: '10rem'}} id="cardFooter">
             <Card.Body>
-              <img src="./logo.jpeg" width= "100" className="rounded-circle" id="img-card-footer" alt="Logo" />
+              <img src="./src/img/logo.jpeg" width= "100" className="rounded-circle" id="img-card-footer" alt="Logo" />
               
               <h5 id="h5">InventoryIQ</h5>
             </Card.Body>
           </Card>
         </Col>
 
-        <Col fluid>
+        <Col fluid= 'true'>
           <Card style={{ width: '100%', height: '10rem' }} id="cardFooter">
             <Card.Body>
               <Card.Title>
                 <h5 id="h5">Nuestras redes sociales</h5>
               </Card.Title>
               <div className="container-icon-footer d-flex justify-content-between m-1 p-0">
-                <img src="../public/square-facebook.svg" className="icon-footer" alt="" />
-                <img src="../public/square-instagram.svg" className="icon-footer" alt="" />
-                <img src="../public/square-x-twitter.svg" className="icon-footer" alt="" />
-                <img src="../public/square-whatsapp.svg" className="icon-footer" alt="" />
+                <img src="../src/img/square-facebook.svg" className="icon-footer" alt="" />
+                <img src="../src/img/square-instagram.svg" className="icon-footer" alt="" />
+                <img src="../src/img/square-x-twitter.svg" className="icon-footer" alt="" />
+                <img src="../src/img/square-whatsapp.svg" className="icon-footer" alt="" />
               </div>
               <div className="container-icon-footer d-flex justify-content-between m-1 p-0">
-                <img src="../public/facebook-messenger.svg" className="icon-footer" alt="" />
-                <img src="../public/google.svg" className="icon-footer" alt="" />
-                <img src="../public/telegram.svg" className="icon-footer" alt="" />
-                <img src="../public/youtube.svg" className="icon-footer" alt="" />
+                <img src="../src/img/facebook-messenger.svg" className="icon-footer" alt="" />
+                <img src="../src/img/google.svg" className="icon-footer" alt="" />
+                <img src="../src/img/telegram.svg" className="icon-footer" alt="" />
+                <img src="../src/img/youtube.svg" className="icon-footer" alt="" />
               </div>
             </Card.Body>
           </Card>
         </Col>
 
-        <Col fluid>
+        <Col fluid= 'true'>
           <Card style={{ width: '100%', height: '10rem' }} id="cardFooter">
             <Card.Body>
               <Button id="btn-footer" variant="primary" onClick={() => navigate("/about")}>About</Button>

@@ -12,7 +12,7 @@ const Navegador = () => {
       <Container>
         <Navbar.Brand onClick = {() =>navigate ("/")}>
           <img
-            src="./logo.jpeg"
+            src="./src/img/logo.jpeg"
             height="30"
             className="d-inline-block align-top rounded-circle"
             alt="Logo"

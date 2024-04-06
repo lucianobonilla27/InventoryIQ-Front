@@ -72,5 +72,88 @@
       "categoria": "Bebidas",
       "fecha": "2024-03-29"
     }
+  ],
+  "consultas": [
+    {
+      "id": "2",
+      "nombre": "Elena Fernández",
+      "mail": "elenaf@example.com",
+      "telefono": 3816001111,
+      "rubro": "Carnes",
+      "consulta": "Por favor, infórmeme sobre el stock y los precios de los cortes de carne de res."
+    },
+    {
+      "id": "3",
+      "nombre": "Ana Rodríguez",
+      "mail": "anarodriguez@example.com",
+      "telefono": 3813334444,
+      "rubro": "Panadería",
+      "consulta": "¿Cuál es la disponibilidad y los precios de los panes integrales?"
+    },
+    {
+      "id": "4",
+      "nombre": "Luis González",
+      "mail": "luisgonzalez@example.com",
+      "telefono": 3815889999,
+      "rubro": "Granos",
+      "consulta": "Quiero saber el stock y los precios de los diferentes tipos de arroz disponibles."
+    },
+    {
+      "id": "5",
+      "nombre": "Laura Díaz",
+      "mail": "lauradiaz@example.com",
+      "telefono": 3815554444,
+      "rubro": "Frutas",
+      "consulta": "¿Tienen disponibilidad de arándanos y cuál es el precio por kilo?"
+    },
+    {
+      "id": "d4b7cad9-3848-4b1b-b168-cb81386e27d7",
+      "nombre": "Leonel Messi",
+      "mail": "mlore20@hotmail.com",
+      "telefono": "2578768768768",
+      "rubro": "Bebidas",
+      "observaciones": "iyrtduytr"
+    },
+    {
+      "id": "9d0a5a5b-5fd4-4ccf-9e49-e35fc4a9a6e9",
+      "nombre": "Alejandro Luna",
+      "mail": "aleluna_777@gmail.com",
+      "telefono": "3814642999",
+      "rubro": "Bebidas",
+      "observaciones": "",
+      "consulta": "precio?"
+    },
+    {
+      "id": "e75894eb-bc4f-4503-89af-e05b05cd0696",
+      "nombre": "Javier Milei",
+      "mail": "javier@gmail.com",
+      "telefono": "38144455557",
+      "rubro": "Pastas",
+      "consulta": "dsadjshadjhsakds"
+    },
+    {
+      "id": "eefce44b-bcf9-4007-9ad5-a49af88a7dcf",
+      "nombre": "Martíz Gonzalez",
+      "mail": "martin@gmail.com",
+      "telefono": "384445558",
+      "rubro": "Verduras",
+      "consulta": "dsadsadsa"
+    },
+    {
+      "id": "0044762a-2150-4cf3-816f-ed028309d4d1",
+      "nombre": "Valentina Salas",
+      "mail": "vale@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Lácteos",
+      "consulta": "fcdsfcmdslñkslkñ´lsñlsañld´sa"
+    },
+    {
+      "id": "fce7fdb3-071d-4364-a66d-faa427a33b03",
+      "nombre": "Jorge Bergoglio",
+      "mail": "vaticano@gmail.com",
+      "telefono": "384445556",
+      "rubro": "Snacks",
+      "consulta": "sdadghjsakjhdksajdlsa"
+    }
   ]
 }

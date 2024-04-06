@@ -1,6 +1,8 @@
 import FormProductos from "../../src/components/forms/FormProductos"
 import { Container } from "react-bootstrap"
 import TablaProductos from "../../src/components/tablas/TablaProductos"
+import TablaConsultas from "../../src/components/tablas/TablaConsultas"
+
 
 const admin = () => {
   return (
@@ -14,6 +16,15 @@ const admin = () => {
           <TablaProductos />
         </div>
       </Container>
+
+      <Container>
+      
+        <div className="p-3 mt-3">
+          <h3 className="p-3 mt-3">Tabla de consultas</h3>
+          <TablaConsultas/>
+        </div>
+      </Container>
+      
     </>
   )
 }

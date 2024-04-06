@@ -91,7 +91,7 @@ const TablaProductos = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>Editar Producto</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body >
                     <FormEditProduct editProducto={editProducto} handleClose={handleClose} />
                 </Modal.Body>
 
