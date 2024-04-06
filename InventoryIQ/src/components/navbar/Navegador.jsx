@@ -47,7 +47,6 @@ const Navegador = () => {
                 Contacto
               </Nav.Link>
             </Nav>
-          </Navbar.Collapse>
 
           { user ? ( //si está registrado, tengo algo en el localstorage aparecerá el boton de cerrar sesion, sino el de login.
             <Button variant="danger" onClick={ () => logout() }>Cerrar Sesion</Button>
@@ -58,6 +57,7 @@ const Navegador = () => {
           )
           
           }
+          </Navbar.Collapse>
 
           
         </Container>
