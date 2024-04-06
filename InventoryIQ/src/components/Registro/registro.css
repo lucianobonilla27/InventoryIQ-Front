@@ -1,0 +1,29 @@
+.registro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-registro {
+    width: 100%;
+    background-color: #DDE6ED;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid ;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .registro-form {
+      width: 80%; 
+    }
+
+}
+
+@media (max-width: 576px) {
+    .registro-form {
+      width: 90%; 
+    }
+}
