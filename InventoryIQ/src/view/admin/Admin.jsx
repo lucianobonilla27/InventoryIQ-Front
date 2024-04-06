@@ -1,11 +1,17 @@
-import FormProductos from "../../components/forms/FormProductos"
-import { Container } from "react-bootstrap"
-import TablaProductos from "../../components/tablas/TablaProductos"
+import { Container, Row, Col } from "react-bootstrap";
+import TableUsuarios from "../../components/table/TableUsuarios.jsx";
+import FormProductos from "../../components/forms/FormProductos";
+import TablaProductos from "../../components/tablas/TablaProductos";
 
-const admin = () => {
+const Admin = () => {
   return (
     <>
       <Container>
+        <Row>
+          <Col>
+              <TableUsuarios />
+          </Col>
+        </Row>
         <h3 className="p-3 mt-3">Registrar productos</h3>
         <FormProductos />
 
@@ -15,7 +21,7 @@ const admin = () => {
         </div>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default admin
+export default Admin;

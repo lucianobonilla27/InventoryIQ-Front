@@ -1,4 +1,31 @@
 {
+  "usuarios": [
+    {
+      "id": "377a8ea5-362b-467a-bc39-42fd03590df8",
+      "nombre": "facundo",
+      "email": "admin@gmail.com",
+      "password": "1234sssss",
+      "confirmPassword": "1234sssss",
+      "isAdmin": true
+    },
+    {
+      "id": "87528907-2c93-4e33-9b1d-6b7ab516e443",
+      "nombre": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456F@",
+      "confirmPassword": "123456F@",
+      "isAdmin": true
+    },
+    {
+      "id": "41bd2aef-7d0f-4032-aac8-e2b42b9e6837",
+      "nombre": "facundo",
+      "email": "facurmedina@gmail.com",
+      "password": "Facundo1992@",
+      "confirmPassword": "Facundo1992@",
+      "isAdmin": false,
+      "habilitado": true
+    }
+  ],
   "productos": [
     {
       "id": "1",
