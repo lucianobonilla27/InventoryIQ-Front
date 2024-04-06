@@ -1,8 +1,9 @@
 import { Card, Button, Modal } from 'react-bootstrap';
 import FormEditStock from '../forms/FormEditStock';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const CardHome = ({ id, nombre, descripcion, imagenUrl, cantidad, categoria,fecha }) => {
+
+const CardHome = ({ id, nombre, descripcion, imagenUrl, cantidad, categoria, fecha }) => {
 
     const [product, setProduct] = useState({
         id,
@@ -13,6 +14,11 @@ const CardHome = ({ id, nombre, descripcion, imagenUrl, cantidad, categoria,fech
         categoria,
         fecha
     })
+
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+
+    
+
 
     const [show, setShow] = useState(false);
     const [editProducto, setEditProducto] = useState(null)
@@ -34,7 +40,7 @@ const CardHome = ({ id, nombre, descripcion, imagenUrl, cantidad, categoria,fech
                     <Card.Title>{nombre}</Card.Title>
                     <Card.Text>{descripcion}</Card.Text>
                     <Card.Text>Stock: {cantidad}</Card.Text>
-                    <Button variant="primary" onClick={() => handleEdit(product)}>Editar</Button>
+                    {user ? <Button variant="primary" onClick={() => handleEdit(product)}>Editar</Button> : null}
                 </Card.Body>
             </Card>
 

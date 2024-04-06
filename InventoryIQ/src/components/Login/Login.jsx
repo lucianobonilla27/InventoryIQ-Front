@@ -30,6 +30,7 @@ const Login = ({ handleClose }) => {
         });
         localStorage.setItem("user", JSON.stringify(user)); //pasamos los datos del usuario como string para guardarlos en el localstorage.
         navigate("/"); //una vez registrado nos lleva al home
+        window.location.reload();
         handleClose();
 
       } else {

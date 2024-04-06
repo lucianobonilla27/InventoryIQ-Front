@@ -9,6 +9,7 @@ const UsuariosContext = ({children}) => {
 
     const [usuarios, setUsuarios] = useState([])
 
+
     //llamar a la api. GET trae, POST CREA,PUT edita y DELETE elimina.
 
     const getUsers = async () => {

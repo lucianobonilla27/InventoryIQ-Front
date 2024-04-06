@@ -7,11 +7,7 @@ const Admin = () => {
   return (
     <>
       <Container>
-        <Row>
-          <Col>
-              <TableUsuarios />
-          </Col>
-        </Row>
+
         <h3 className="p-3 mt-3">Registrar productos</h3>
         <FormProductos />
 
@@ -19,6 +15,11 @@ const Admin = () => {
           <h3 className="p-3 mt-3">Tabla de productos:</h3>
           <TablaProductos />
         </div>
+        <Row>
+          <Col>
+            <TableUsuarios />
+          </Col>
+        </Row>
       </Container>
     </>
   );
