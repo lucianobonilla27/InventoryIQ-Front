@@ -3,7 +3,7 @@ import Footer from "./components/footer/Footer"
 import Navegador from "./components/navbar/Navegador"
 import Rutas from './components/rutas/Rutas';
 import UsuariosContext from './context/UsuariosContext';
-
+import ProductsContext from "./context/ProductsContext";
 
 
 function App() {
@@ -11,12 +11,16 @@ function App() {
 
   return (
     <>
+
     <UsuariosContext>
+    <ProductsContext>
       <Navegador/>
      <Rutas/>
      <Footer/>
+     </ProductsContext>
     </UsuariosContext>
      
+
     </>
   )
 }
