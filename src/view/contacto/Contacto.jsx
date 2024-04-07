@@ -10,22 +10,15 @@ const Contacto = () => {
 <Container fluid className="contacto-container">
   <Row className="justify-content-space-between">
 
-  
     <Col xs={12} md={6} >
     <Col >
       <div className="tituloCol2 text-uppercase text text-center m-3">
         <h5>Envíanos tu consulta</h5>
       </div>
-     
       <FormContacto />
       
     </Col>
   </Col>
-
-
-
-  
-  
 
 <Col xs={12} md={6}>
 <div className="tituloCol1 text-uppercase text text-center m-3">

@@ -43,8 +43,8 @@ const navigate = useNavigate();
         <Col fluid= 'true'>
           <Card style={{ width: '100%', height: '10rem' }} id="cardFooter">
             <Card.Body>
-              <Button id="btn-footer" variant="primary" onClick={() => navigate("/about")}>About</Button>
-              <Button id="btn-footer" variant="primary" onClick={() => navigate("/")}>Principal</Button>
+              <Button id="btn-footer" variant="primary" onClick={() => navigate("/about")}>Quienes somos</Button>
+              <Button id="btn-footer" variant="primary" onClick={() => navigate("/error404")}>Preguntas frecuentes</Button>
               <Button id="btn-footer" variant="primary" onClick={() => navigate("/contacto")}>Contacto</Button>
             </Card.Body>
           </Card>

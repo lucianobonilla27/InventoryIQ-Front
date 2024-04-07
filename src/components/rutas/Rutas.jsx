@@ -4,6 +4,7 @@ import Home from "../../view/home/Home.jsx";
 import About from "../../view/about/About.jsx";
 import Contacto from "../../view/contacto/Contacto.jsx";
 import Admin from "../../view/admin/Admin.jsx";
+import Error404 from "../../view/error404/Error404.jsx";
 
 
 
@@ -16,6 +17,7 @@ const Rutas = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/contacto" element={<Contacto/>} />
         <Route path="/admin" element={<Admin/>} />
+        <Route path="/error404" element={<Error404/>} />
       </Routes>
    
   );
