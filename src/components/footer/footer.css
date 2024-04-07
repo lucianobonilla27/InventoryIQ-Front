@@ -1,5 +1,6 @@
 .footer-container {
     background-color: #FFFFFF;
+    padding-bottom: 0%;
    
    }
    #cardFooter{
@@ -22,7 +23,7 @@
        border: 2px solid #FFFFFF;
        border-radius: 25px;
        width: 15rem;
-       padding: 0px;
+       padding: 2px;
        margin: 5px;
        text-align: center;
        color:#526D82;

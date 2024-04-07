@@ -68,7 +68,7 @@
       "nombre": "Jugo de naranja",
       "descripcion": "Natural exprimido",
       "imagenUrl": "https://acdn.mitiendanube.com/stores/001/157/846/products/citric-naranja-tetra-500ml1-f6a1b4aef79d60a75416319875361481-1024-1024.png",
-      "cantidad": 15,
+      "cantidad": "15",
       "categoria": "Bebidas",
       "fecha": "2024-03-29"
     }
@@ -107,53 +107,60 @@
       "consulta": "¿Tienen disponibilidad de arándanos y cuál es el precio por kilo?"
     },
     {
-      "id": "d4b7cad9-3848-4b1b-b168-cb81386e27d7",
-      "nombre": "Leonel Messi",
-      "mail": "mlore20@hotmail.com",
-      "telefono": "2578768768768",
-      "rubro": "Bebidas",
-      "observaciones": "iyrtduytr"
+      "id": "26855a72-9bf9-478d-bfda-26db37ca63d8",
+      "nombre": "Bautista Luna",
+      "mail": "bauti@gmail.com",
+      "telefono": "3815447778",
+      "rubro": "Snacks",
+      "consulta": "precio"
     },
     {
-      "id": "9d0a5a5b-5fd4-4ccf-9e49-e35fc4a9a6e9",
+      "id": "e0e03500-973b-4f21-80d5-d0d292cae6d1",
       "nombre": "Alejandro Luna",
       "mail": "aleluna_777@gmail.com",
-      "telefono": "3814642999",
-      "rubro": "Bebidas",
-      "observaciones": "",
-      "consulta": "precio?"
+      "telefono": "3987788895",
+      "rubro": "Panadería",
+      "consulta": "dwsadsads"
     },
     {
-      "id": "e75894eb-bc4f-4503-89af-e05b05cd0696",
+      "id": "860dd1f9-ac52-4bf9-a6f2-c0639b83966a",
       "nombre": "Javier Milei",
-      "mail": "javier@gmail.com",
-      "telefono": "38144455557",
-      "rubro": "Pastas",
-      "consulta": "dsadjshadjhsakds"
+      "mail": "leon@gmail.com",
+      "telefono": "3814645889",
+      "rubro": "Panadería",
+      "consulta": "sdsadsa"
     },
     {
-      "id": "eefce44b-bcf9-4007-9ad5-a49af88a7dcf",
-      "nombre": "Martíz Gonzalez",
-      "mail": "martin@gmail.com",
-      "telefono": "384445558",
-      "rubro": "Verduras",
-      "consulta": "dsadsadsa"
-    },
-    {
-      "id": "0044762a-2150-4cf3-816f-ed028309d4d1",
-      "nombre": "Valentina Salas",
-      "mail": "vale@gmail.com",
+      "id": "1cbb1f98-f883-44ba-89c2-e96b62df8be2",
+      "nombre": "Osvaldo Jaldo",
+      "mail": "gobernador@gmail.com",
       "telefono": "381445558",
       "rubro": "Lácteos",
-      "consulta": "fcdsfcmdslñkslkñ´lsñlsañld´sa"
+      "consulta": "tengo para ofrecerles lacteos de buena calidad de Trancas"
     },
     {
-      "id": "fce7fdb3-071d-4364-a66d-faa427a33b03",
-      "nombre": "Jorge Bergoglio",
-      "mail": "vaticano@gmail.com",
-      "telefono": "384445556",
-      "rubro": "Snacks",
-      "consulta": "sdadghjsakjhdksajdlsa"
+      "id": "c088a424-2ccf-454e-a379-2664784d4325",
+      "nombre": "Victoria Villarroel",
+      "mail": "laVice@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Bebidas",
+      "consulta": "tienen Fernet en cantidad? Tambien quisiera saber el precio de 100 botellas."
+    },
+    {
+      "id": "8555290d-ce28-4e15-89f1-93d74a060aea",
+      "nombre": "MANUEL BELGRANO",
+      "mail": "batallatuc@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Panadería",
+      "consulta": "Tienen pan lactal para realizar una compra de 1000 paquetes? Es para un ejercito de 800 soldados. Muchas Gracias"
+    },
+    {
+      "id": "aa9215aa-0adb-451f-a5dc-75b8cf1561fa",
+      "nombre": "María D'arterio",
+      "mail": "mariadart@hotmail.com",
+      "telefono": "381445558",
+      "rubro": "Panadería",
+      "consulta": "Buenas tienen disponible para vender 20 kg de pan de miga?"
     }
   ]
 }

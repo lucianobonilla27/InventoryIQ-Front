@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './footer.css';
 
 const Footer = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
   return (
     <Container fluid= 'true' className="footer-container container-fluid">

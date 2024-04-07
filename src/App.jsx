@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from "./components/footer/Footer"
-import Navegador from "./components/navbar/Navegador"
+import Footer from "./components/footer/Footer";
+import Navegador from "./components/navbar/Navegador";
 import ProductsContext from "./context/ProductsContext";
 import ConsultasContext from './context/ConsultasContext';
-import Rutas from "./components/rutas/Rutas";
+import Rutas from './components/rutas/Rutas'
+
 
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
       <ProductsContext>
       <ConsultasContext>
         <Navegador />
-        <Rutas />
-        <Footer />
+        <Rutas/>
+        <Footer/>
         </ConsultasContext>
       </ProductsContext>
+     
       
     </>
   )

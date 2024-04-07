@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { ConsContext } from '../../context/ConsultasContext';
 import { v4 as uuidv4 } from "uuid";
 import './formRespuesta.css';
@@ -7,7 +7,7 @@ import './formRespuesta.css';
 const FormRespuesta = ({ initialValues }) => {
   const { addConsultas } = useContext(ConsContext);
 
-  // ESTADO INICIAL DEL FORMULARIO
+ 
   const [consultas, setConsultas] = useState({
     id: uuidv4(),
     nombre: "",
@@ -15,14 +15,14 @@ const FormRespuesta = ({ initialValues }) => {
     respuesta: ""
   });
 
-  // useEffect para actualizar el estado con los valores iniciales
+  
   useEffect(() => {
     if (initialValues) {
       setConsultas({
-        id: initialValues.id || uuidv4(), // Si no hay ID inicial, genera uno nuevo
+        id: initialValues.id || uuidv4(), 
         nombre: initialValues.nombre || "",
         mail: initialValues.mail || "",
-        respuesta: "" // La respuesta se inicializa vacía
+        respuesta: "" 
       });
     }
   }, [initialValues]);
@@ -39,8 +39,7 @@ const FormRespuesta = ({ initialValues }) => {
     addConsultas(consultas);
     setConsultas({
       id: uuidv4(),
-      nombre: "", // Limpiamos el nombre después de enviar el formulario
-      mail: "", // Limpiamos el mail después de enviar el formulario
+      nombre: "",
       respuesta: ""
     });
   };

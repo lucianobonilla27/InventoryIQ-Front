@@ -1,12 +1,13 @@
-import { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export const ConsContext = createContext();
+export const ConsContext = React.createContext();
 
 const ConsultasContext = ({ children }) => {
   const [consultas, setConsultas] = useState([]);
+  
 
-  // GET ---->TRAER CONSULTAS
+  //GET CONSULTAS
   const getConsultas = async () => {
     try {
       const response = await axios.get('http://localhost:8000/consultas');
@@ -15,8 +16,7 @@ const ConsultasContext = ({ children }) => {
       console.log(error); 
     }
   };
-
-  // POST ---->CREAR CONSULTAS
+//ADD CONSULTAS
   const addConsultas = async (consulta) => {
     try {
       const response = await axios.post('http://localhost:8000/consultas', consulta);
@@ -25,8 +25,7 @@ const ConsultasContext = ({ children }) => {
       console.log(error); 
     }
   };
-
-  // DELETE---->ELIMINAR CONSULTAS
+//DELETE CONSULTAS
   const deleteConsultas = async (id) => {
     try {
       await axios.delete(`http://localhost:8000/consultas/${id}`);
@@ -37,11 +36,13 @@ const ConsultasContext = ({ children }) => {
   };
 
   useEffect(() => {
-    getConsultas();}, []);
-  console.log(consultas, 'Consultas en el contexto');
+    getConsultas();
+  }, []);
+
+ 
 
   return (
-    <ConsContext.Provider value={{ consultas, getConsultas, addConsultas, deleteConsultas }}>
+    <ConsContext.Provider value={{ consultas, getConsultas, addConsultas, deleteConsultas}}>
       {children}
     </ConsContext.Provider>
   );

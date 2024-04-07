@@ -1,32 +1,34 @@
-import FormProductos from "../../src/components/forms/FormProductos"
-import { Container } from "react-bootstrap"
-import TablaProductos from "../../src/components/tablas/TablaProductos"
-import TablaConsultas from "../../src/components/tablas/TablaConsultas"
+
+import { Container} from "react-bootstrap";
+import FormProductos from "../../components/forms/FormProductos";
+import TablaProductos from "../../components/tablas/TablaProductos";
+import TablaConsultas from "../../components/tablas/TablaConsultas";
 
 
-const admin = () => {
+const Admin = () => {
+ 
   return (
     <>
       <Container>
-        <h3 className="p-3 mt-3">Registrar productos</h3>
-        <FormProductos />
 
-        <div className="p-3 mt-3">
-          <h3 className="p-3 mt-3">Tabla de productos:</h3>
-          <TablaProductos />
-        </div>
-      </Container>
+<h3 className="p-3 mt-3">Registrar productos</h3>
+<FormProductos />
 
-      <Container>
-      
-        <div className="p-3 mt-3">
-          <h3 className="p-3 mt-3">Tabla de consultas</h3>
-          <TablaConsultas/>
-        </div>
-      </Container>
+<div className="p-3 mt-3">
+  <h3 className="p-3 mt-3">Tabla de productos:</h3>
+  <TablaProductos />
+</div>
+
+<div className="p-3 mt-3">
+  <h3 className="p-3 mt-3">Tabla de consultas:</h3>
+  <TablaConsultas />
+</div>
+
+</Container>
+
       
     </>
-  )
-}
+  );
+};
 
-export default admin
+export default Admin;
