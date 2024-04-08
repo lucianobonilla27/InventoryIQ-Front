@@ -1,20 +1,20 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "nombre": "Admin",
+      "id": "592731e1-2ecc-4112-b90e-76cc547cea92",
+      "nombre": "facundo medina",
       "email": "admin@admin.com",
       "password": "Admin159@",
       "confirmPassword": "Admin159@",
       "isAdmin": true
     },
     {
-      "id": 1,
-      "nombre": "Admin",
-      "email": "admin@admin.com",
-      "password": "Admin159@",
-      "confirmPassword": "Admin159@",
-      "isAdmin": true
+      "id": "662ddeb3-707a-4371-afde-efe880f7dea8",
+      "nombre": "facundo",
+      "email": "facu@gmail.com",
+      "password": "Facundo1@",
+      "confirmPassword": "Facundo1@",
+      "isAdmin": false
     }
   ],
   "productos": [

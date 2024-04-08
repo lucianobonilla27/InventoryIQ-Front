@@ -13,13 +13,33 @@ const TableUsuarios = () => {
   
 
   const handleEdit = (user) => {
-    setEditUsuario(user)
-    setShow(true)
+
+    if(user.email === 'admin@admin.com' && user.password === 'Admin159@' ) {
+      swal.fire ({
+        title: "Acción no permitida",
+        text: "No puedes editar el usuario administrador.",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      });
+    } else {
+      setEditUsuario(user);
+    setShow(true);
+    }  
+    
   }
 
 
 
   const handleDelete = (user) => {
+
+    if(user.email === 'admin@admin.com' && user.password === 'Admin159@' ) {
+      swal.fire ({
+        title: "Acción no permitida",
+        text: "No puedes eliminar el usuario administrador.",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      });
+    } else {
     swal.fire({
         title: "¿Estás seguro?",
         text: "Una vez eliminado, no podrás recuperar este usuario",
@@ -43,7 +63,7 @@ const TableUsuarios = () => {
         }
         });
     }    
-
+  };
 
   return (
     <>
@@ -59,7 +79,7 @@ const TableUsuarios = () => {
               <th>Nombre</th>
               <th>Mail</th>
               <th>Admin</th>
-              <th>Desabilitar</th>
+              <th>Acción</th>
             </tr>
           </thead>
           <tbody>
