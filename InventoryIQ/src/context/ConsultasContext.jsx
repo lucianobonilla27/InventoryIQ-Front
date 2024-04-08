@@ -10,7 +10,7 @@ const ConsultasContext = ({ children }) => {
   //GET CONSULTAS
   const getConsultas = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/consultas');
+      const response = await axios.get('http://localhost:7000/consultas');
       setConsultas(response.data);
     } catch (error) {
       console.log(error); 
@@ -19,7 +19,7 @@ const ConsultasContext = ({ children }) => {
 //ADD CONSULTAS
   const addConsultas = async (consulta) => {
     try {
-      const response = await axios.post('http://localhost:8000/consultas', consulta);
+      const response = await axios.post('http://localhost:7000/consultas', consulta);
       setConsultas(consultas => [...consultas, response.data]);
     } catch (error) {
       console.log(error); 
@@ -28,7 +28,7 @@ const ConsultasContext = ({ children }) => {
 //DELETE CONSULTAS
   const deleteConsultas = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/consultas/${id}`);
+      await axios.delete(`http://localhost:7000/consultas/${id}`);
       setConsultas(consultas => consultas.filter(consulta => consulta.id !== id)); 
     } catch (error) {
       console.log(error); 
