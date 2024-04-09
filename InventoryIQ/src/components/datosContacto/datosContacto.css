@@ -1,0 +1,16 @@
+.datos {
+    font-size: 20px;
+    color:  #27374D;
+    text-align: left;
+}
+
+.datos2{
+    font-size: 15px;
+    background-color:#9DB2BF ;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.bi path {
+    fill: #526D82;
+  }

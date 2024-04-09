@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import {Form ,Button} from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UsuariosProvider } from "../../context/UsuariosContext";
 import Swal from "sweetalert2";
@@ -27,12 +27,11 @@ const Login = ({ handleClose }) => {
           icon: "success",
           confirmButtonText: "Aceptar",
           timer: 2000,
+        }).then(() => {
+          localStorage.setItem("user", JSON.stringify(user)); // Guardamos los datos del usuario en el localstorage.
+          navigate("/"); // Redirección al home
+          handleClose();
         });
-        localStorage.setItem("user", JSON.stringify(user)); //pasamos los datos del usuario como string para guardarlos en el localstorage.
-        navigate("/"); //una vez registrado nos lleva al home
-        window.location.reload();
-        handleClose();
-
       } else {
         Swal.fire({
           title: "Error",
@@ -40,7 +39,7 @@ const Login = ({ handleClose }) => {
           icon: "error",
           confirmButtonText: "Aceptar",
           timer: 2000,
-        })
+        });
       }
 
 
@@ -75,14 +74,14 @@ const Login = ({ handleClose }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             name="password"
-            placeholder="Ingrese su contraseña" 
-            
+            placeholder="Ingrese su contraseña"
+
           />
         </Form.Group>
-      <Button className="w-100" type="submit"> Iniciar sesión </Button>
+        <Button className="w-100" type="submit"> Iniciar sesión </Button>
       </Form>
       <Button className="w-100 mt-2 bg-danger border-0" onClick={registro}>
-      Registrarse
+        Registrarse
       </Button>
 
     </>

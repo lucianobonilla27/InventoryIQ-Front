@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": "592731e1-2ecc-4112-b90e-76cc547cea92",
-      "nombre": "facundo medina",
+      "nombre": "admin",
       "email": "admin@admin.com",
       "password": "Admin159@",
       "confirmPassword": "Admin159@",
@@ -89,6 +89,96 @@
       "cantidad": 15,
       "categoria": "Bebidas",
       "fecha": "2024-03-29"
+    }
+  ],
+  "consultas": [
+    {
+      "id": "2",
+      "nombre": "Elena Fernández",
+      "mail": "elenaf@example.com",
+      "telefono": 3816001111,
+      "rubro": "Carnes",
+      "consulta": "Por favor, infórmeme sobre el stock y los precios de los cortes de carne de res."
+    },
+    {
+      "id": "3",
+      "nombre": "Ana Rodríguez",
+      "mail": "anarodriguez@example.com",
+      "telefono": 3813334444,
+      "rubro": "Panadería",
+      "consulta": "¿Cuál es la disponibilidad y los precios de los panes integrales?"
+    },
+    {
+      "id": "4",
+      "nombre": "Luis González",
+      "mail": "luisgonzalez@example.com",
+      "telefono": 3815889999,
+      "rubro": "Granos",
+      "consulta": "Quiero saber el stock y los precios de los diferentes tipos de arroz disponibles."
+    },
+    {
+      "id": "5",
+      "nombre": "Laura Díaz",
+      "mail": "lauradiaz@example.com",
+      "telefono": 3815554444,
+      "rubro": "Frutas",
+      "consulta": "¿Tienen disponibilidad de arándanos y cuál es el precio por kilo?"
+    },
+    {
+      "id": "26855a72-9bf9-478d-bfda-26db37ca63d8",
+      "nombre": "Bautista Luna",
+      "mail": "bauti@gmail.com",
+      "telefono": "3815447778",
+      "rubro": "Snacks",
+      "consulta": "precio"
+    },
+    {
+      "id": "e0e03500-973b-4f21-80d5-d0d292cae6d1",
+      "nombre": "Alejandro Luna",
+      "mail": "aleluna_777@gmail.com",
+      "telefono": "3987788895",
+      "rubro": "Panadería",
+      "consulta": "dwsadsads"
+    },
+    {
+      "id": "860dd1f9-ac52-4bf9-a6f2-c0639b83966a",
+      "nombre": "Javier Milei",
+      "mail": "leon@gmail.com",
+      "telefono": "3814645889",
+      "rubro": "Panadería",
+      "consulta": "sdsadsa"
+    },
+    {
+      "id": "1cbb1f98-f883-44ba-89c2-e96b62df8be2",
+      "nombre": "Osvaldo Jaldo",
+      "mail": "gobernador@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Lácteos",
+      "consulta": "tengo para ofrecerles lacteos de buena calidad de Trancas"
+    },
+    {
+      "id": "c088a424-2ccf-454e-a379-2664784d4325",
+      "nombre": "Victoria Villarroel",
+      "mail": "laVice@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Bebidas",
+      "consulta": "tienen Fernet en cantidad? Tambien quisiera saber el precio de 100 botellas."
+    },
+    {
+      "id": "8555290d-ce28-4e15-89f1-93d74a060aea",
+      "nombre": "MANUEL BELGRANO",
+      "mail": "batallatuc@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Panadería",
+      "consulta": "Tienen pan lactal para realizar una compra de 1000 paquetes? Es para un ejercito de 800 soldados. Muchas Gracias"
+    },
+    {
+      "id": "aa9215aa-0adb-451f-a5dc-75b8cf1561fa",
+      "nombre": "María D'arterio",
+      "mail": "mariadart@hotmail.com",
+      "telefono": "381445558",
+      "rubro": "Panadería",
+      "consulta": "Buenas tienen disponible para vender 20 kg de pan de miga?"
     }
   ]
 }

@@ -1,0 +1,15 @@
+.custom-modal-content {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px; 
+  }
+
+  .body-respuesta {
+    background-color:  #DDE6ED;
+    border-radius: 10px;
+  }
+
+  .header-respuesta {
+    padding: 5px;
+    margin: 10px;
+  }

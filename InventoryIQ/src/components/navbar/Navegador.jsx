@@ -49,7 +49,7 @@ const Navegador = () => {
             </Nav>
 
           { user ? ( //si está registrado, tengo algo en el localstorage aparecerá el boton de cerrar sesion, sino el de login.
-            <Button variant="danger" onClick={ () => logout() }>Cerrar Sesion</Button>
+            <Button  className="m-1" variant="primary" onClick={ () => logout() }>Cerrar Sesion</Button>
           ) : (
             <Button className="m-1" variant="primary" onClick={handleShowLogin}>
             Ingresar
