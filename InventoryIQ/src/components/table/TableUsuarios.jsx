@@ -67,10 +67,10 @@ const TableUsuarios = () => {
 
   return (
     <>
-      <h3 className="fs-2 m-4">Usuarios Registrados</h3>
+      <h3 className="p-3 mt-3">Usuarios Registrados:</h3>
 
       {usuarios.length === 0 ? (
-        <h3>No Tenemos usuarios para mostrarte</h3>
+        <h3 className="p-3 mt-3">No Tenemos usuarios para mostrarte</h3>
       ) : (
         <Table striped bordered hover className="text-center align-middle">
           <thead>

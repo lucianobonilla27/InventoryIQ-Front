@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Container, Row, Col, Form, Table, Button, Modal } from "react-bootstrap";
 import { ConsContext } from "../../context/ConsultasContext";
 import Swal from 'sweetalert2';
@@ -140,7 +140,7 @@ const Admin = () => {
                 </Row>
 
                 <div className="row justify-content-center">
-                    {filtrarConsultas().length === 0 ? (
+                    {filtrarConsultas()?.length === 0 ? (
                         <h3>No hay consultas disponibles</h3>
                     ) : (
                         <div className="table-responsive-md">
@@ -156,7 +156,7 @@ const Admin = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {filtrarConsultas().map((consulta) => (
+                                    {filtrarConsultas()?.map((consulta) => (
                                         <tr key={consulta.id}>
                                             <td>{consulta.nombre}</td>
                                             <td>{consulta.mail}</td>

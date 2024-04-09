@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { createContext ,useEffect, useState } from 'react';
 import axios from 'axios';
 
-export const ConsContext = React.createContext();
+export const ConsContext = createContext();
 
 const ConsultasContext = ({ children }) => {
   const [consultas, setConsultas] = useState([]);

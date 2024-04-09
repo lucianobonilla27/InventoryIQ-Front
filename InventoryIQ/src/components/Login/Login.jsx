@@ -29,7 +29,7 @@ const Login = ({ handleClose }) => {
           timer: 2000,
         }).then(() => {
           localStorage.setItem("user", JSON.stringify(user)); // Guardamos los datos del usuario en el localstorage.
-          navigate("/"); // Redirección al home
+          window.location.reload(); // Recargar la página
           handleClose();
         });
       } else {
