@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import './formContacto.css';
 
 const FormContacto = () => {
-const  addConsultas  = useContext(ConsContext);
+const { addConsultas } = useContext(ConsContext);
 const [consultas, setConsultas] = useState({
         id: uuidv4(),
         nombre: "",

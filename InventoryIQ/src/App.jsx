@@ -4,6 +4,7 @@ import Navegador from "./components/navbar/Navegador"
 import Rutas from './components/rutas/Rutas';
 import UsuariosContext from './context/UsuariosContext';
 import ProductsContext from "./context/ProductsContext";
+import ConsultasContext from './context/ConsultasContext';
 
 
 function App() {
@@ -12,14 +13,16 @@ function App() {
   return (
     <>
 
-    <UsuariosContext>
-    <ProductsContext>
-      <Navegador/>
-     <Rutas/>
-     <Footer/>
-     </ProductsContext>
-    </UsuariosContext>
-     
+      <UsuariosContext>
+        <ProductsContext>
+          <ConsultasContext>
+            <Navegador />
+            <Rutas />
+            <Footer />
+          </ConsultasContext>
+        </ProductsContext>
+      </UsuariosContext>
+
 
     </>
   )
