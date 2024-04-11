@@ -15,6 +15,14 @@
       "password": "Facundo1@",
       "confirmPassword": "Facundo1@",
       "isAdmin": false
+    },
+    {
+      "id": "7e4aed34-d903-4757-80b2-e92e2a8c1d4a",
+      "nombre": "Luciano",
+      "email": "lucianobonilla27@gmail.com",
+      "password": "105716Lucho@",
+      "confirmPassword": "105716Lucho@",
+      "isAdmin": false
     }
   ],
   "productos": [

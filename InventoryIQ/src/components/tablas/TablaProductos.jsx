@@ -1,21 +1,22 @@
-import { useContext, useState } from "react";
-import { ProductosProvider } from "../../context/ProductsContext";
-import { Button, Table, Modal } from "react-bootstrap";
-import FormEditProduct from "../forms/FormEditProduct";
+import React, { useContext, useState } from "react";
+import { Button, Table, Modal, Form, Row, Col } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import { ProductosProvider } from "../../context/ProductsContext";
+import FormEditProduct from "../forms/FormEditProduct";
 
 const TablaProductos = () => {
     const { productos, deleteProductos } = useContext(ProductosProvider);
     const [show, setShow] = useState(false);
-    const [editProducto, setEditProducto] = useState(null)
+    const [editProducto, setEditProducto] = useState(null);
+    const [busqueda, setBusqueda] = useState("");
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
 
     const handleClose = () => setShow(false);
 
-
     const handleEdit = (product) => {
-        setEditProducto(product)
-        setShow(true)
-    }
+        setEditProducto(product);
+        setShow(true);
+    };
 
     const handleEliminarClick = (id) => {
         Swal.fire({
@@ -29,10 +30,7 @@ const TablaProductos = () => {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-
                 deleteProductos(id);
-
-
                 Swal.fire({
                     title: 'Eliminado',
                     text: 'El producto se ha eliminado correctamente.',
@@ -42,9 +40,69 @@ const TablaProductos = () => {
             }
         });
     };
+
+    const handleBusquedaChange = (event) => {
+        setBusqueda(event.target.value);
+    };
+
+    const handleCategoriaChange = (event) => {
+        setCategoriaSeleccionada(event.target.value);
+    };
+
+    const filtrarProductos = () => {
+        let productosFiltrados = productos;
+
+        if (categoriaSeleccionada !== "") {
+            productosFiltrados = productosFiltrados.filter(
+                (producto) => producto.categoria === categoriaSeleccionada
+            );
+        }
+
+        if (busqueda.trim() !== "") {
+            productosFiltrados = productosFiltrados.filter((producto) =>
+                producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
+            );
+        }
+
+        return productosFiltrados;
+    };
+
     return (
         <>
-            {productos.length === 0 ? (
+            <Row className="mb-3">
+                <Col md={9}>
+                    <div className="p-4">
+                        <Form.Control
+                            type="text"
+                            placeholder="Buscar producto por nombre..."
+                            value={busqueda}
+                            onChange={handleBusquedaChange}
+                        />
+                    </div>
+                </Col>
+                <Col md={3}>
+                    <form action="" className="p-4">
+                        <select
+                            name="categoria"
+                            className="form-select"
+                            value={categoriaSeleccionada}
+                            onChange={handleCategoriaChange}
+                        >
+                            <option value="">Categoría</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Pastas">Pastas</option>
+                            <option value="Lácteos">Lácteos</option>
+                            <option value="Panadería">Panadería</option>
+                            <option value="Granos">Granos</option>
+                            <option value="Frutas">Frutas</option>
+                            <option value="Verduras">Verduras</option>
+                            <option value="Carnes">Carnes</option>
+                            <option value="Snacks">Snacks</option>
+                        </select>
+                    </form>
+                </Col>
+            </Row>
+            {filtrarProductos().length === 0 ? (
                 <h2>No Tenemos productos para mostrarte</h2>
             ) : (
                 <div className="table-responsive">
@@ -54,15 +112,15 @@ const TablaProductos = () => {
                                 <th>#</th>
                                 <th>Imagen</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Cantidad</th>
-                                <th>Categoria</th>
+                                <th>Categoría</th>
                                 <th>Fecha</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {productos.map((product) => (
+                            {filtrarProductos().map((product) => (
                                 <tr key={product.id}>
                                     <td>{product.id}</td>
                                     <td style={{ position: 'relative', width: '10%', height: '80px' }}>
@@ -94,10 +152,9 @@ const TablaProductos = () => {
                 <Modal.Body>
                     <FormEditProduct editProducto={editProducto} handleClose={handleClose} />
                 </Modal.Body>
-
             </Modal>
         </>
-    )
-}
+    );
+};
 
-export default TablaProductos
+export default TablaProductos;
