@@ -18,7 +18,6 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
   const { addUser, editarUsuario } = useContext(UsuariosProvider);
 
   const [usuario, setUsuario] = useState({
-    //capturamos los datos del registro.
     id: editUsuario ? editUsuario.id : uuidv4(),
     nombre: editUsuario ? editUsuario.nombre : "",
     email: editUsuario ? editUsuario.email : "",
@@ -28,13 +27,11 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
   });
 
   const handleChange = (e) => {
-    // setUsuario({ ...usuario, [e.target.name]: e.target.value }); //mediante el handleChange actualizamos el estado. recuperamos todos los usuarios con el spreitopereitor ...usuario y mediante el evento de js guardar todo lo que pusimos en el onchange.
-    //Desestructuración y tomamos los valores de una manera diferente.
-    const {name, value, type, checked } = e.target;
+    const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
       setUsuario({ ...usuario, [name]: checked });
     } else {
-      setUsuario ({ ...usuario, [name]: value });
+      setUsuario({ ...usuario, [name]: value });
     }
   };
 
@@ -61,30 +58,17 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
       return;
     }
 
-    // const usuarioExistente = usuario.find((user) => user.email === usuario.email );
-    // if (usuarioExistente) {
-    //   swal.fire ({
-    //     title: "Error",
-    //     text: "Este correo electrónico ya se encuentra registrado. Por favor póngase en contacto con el servicio para poder solucionarlo.",
-    //     icon: "error",
-    //     confirmButtonText: "Aceptar",
-    //   });
-    //   return;
-
-    // }
-
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if(!passwordRegex.test(usuario.password)) {
       swal.fire ({
         title: "Error",
-        text: "La contraseña debe contener al menos una mayúscula, una minuscula, un número y un carácter especial.",
+        text: "La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial.",
         icon: "error",
         confirmButtonText: "Aceptar",
       });
       return;
     }
 
-  
     if (editUsuario) {
       editarUsuario({...editUsuario, isAdmin: usuario.isAdmin});
       swal.fire({
@@ -120,7 +104,6 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
         isAdmin: false,
       });
     }
-
   };
 
   return (
@@ -137,6 +120,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                 value={usuario.nombre}
                 onChange={handleChange}
                 name="nombre"
+                disabled={editUsuario ? true : false}
               />
             </Form.Group>
             <Form.Group className="mt-2" controlId="formEmail">
@@ -147,6 +131,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                 value={usuario.email}
                 onChange={handleChange}
                 name="email"
+                disabled={editUsuario ? true : false}
               />
             </Form.Group>
             <Form.Group className="mt-2" controlId="formPassword">
@@ -157,6 +142,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                 value={usuario.password}
                 onChange={handleChange}
                 name="password"
+                disabled={editUsuario ? true : false}
               />
             </Form.Group>
             <Form.Group className="mt-2" controlId="formConfirmPassword">
@@ -167,11 +153,10 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                 value={usuario.confirmPassword}
                 onChange={handleChange}
                 name="confirmPassword"
+                disabled={editUsuario ? true : false}
               />
             </Form.Group>
-            {/* si edit usuario viene como true se agrega al registro un checkbox que sea como admin y voy a tomar los datos de ese admin y lo voy a cambiar a true o false. */}
             {editUsuario ? (
-              
               <FormGroup className="mt-3" controlId="formBasicCheckbox">
                 <FormCheck
                   type="checkbox"
@@ -181,22 +166,17 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                   name="isAdmin"
                 />
               </FormGroup>
-              
             ) : null}
 
-            { editUsuario ? (
+            {editUsuario ? (
               <Button className="w-100 mt-3" type="submit" variant="primary">
                 Editar usuario
               </Button>
-            ) :
-            
-            <Button className="w-100 mt-3" variant="primary" type="submit">
-              Registrarse
-            </Button>
-            
-            }
-
-            
+            ) : (
+              <Button className="w-100 mt-3" variant="primary" type="submit">
+                Registrarse
+              </Button>
+            )}
           </Form>
         </Col>
       </Row>

@@ -20,6 +20,7 @@ const Admin = () => {
 </div>
 
 <div className="p-3 mt-3">
+<h3 className="p-3 mt-3">Usuarios registrados:</h3>
   <TableUsuarios />
 </div>
 

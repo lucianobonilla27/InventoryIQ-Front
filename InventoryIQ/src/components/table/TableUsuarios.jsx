@@ -119,10 +119,11 @@ const TableUsuarios = () => {
   </Col>
 </Row>
 
-      <h3 className="p-3 mt-3">Usuarios Registrados:</h3>
+    
       {filtrarUsuarios().length === 0 ? (
         <h3 className="p-3 mt-3">No Tenemos usuarios para mostrarte</h3>
       ) : (
+        <div className="table-responsive">
         <Table striped bordered hover className="text-center align-middle">
           <thead>
             <tr>
@@ -160,6 +161,7 @@ const TableUsuarios = () => {
             ))}
           </tbody>
         </Table>
+        </div>
       )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className="border-0" closeButton>
