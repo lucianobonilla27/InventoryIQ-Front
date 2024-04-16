@@ -47,9 +47,9 @@ const FormEditStock = ({ editProducto, handleClose }) => {
 
     return (
         <>
-            <Form onSubmit={handleSubmit} style={{ backgroundColor: '#DDE6ED', padding: '20px', borderRadius: '8px' }}>
+            <Form onSubmit={handleSubmit} style={{ backgroundColor: '#DDE6ED', padding: '20px', borderRadius: '0 0 8px 8px' }}>
                 <Row className="text-center">
-                    <Col>
+                    <Col md={{ span: 6, offset: 3 }}>
                         <Form.Group className="mb-3">
                             <Form.Label>Cantidad</Form.Label>
                             <Form.Control
@@ -70,8 +70,8 @@ const FormEditStock = ({ editProducto, handleClose }) => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={12} className="text-center">
-                        <Button variant="primary" type="submit">
+                    <Col md={12} className="text-center ">
+                        <Button className='mt-1' variant="primary" type="submit">
                             Guardar
                         </Button>
                     </Col>

@@ -78,9 +78,9 @@ const Login = ({ handleClose }) => {
 
           />
         </Form.Group>
-        <Button className="w-100" type="submit"> Iniciar sesión </Button>
+        <Button className="w-100 border-0" type="submit"> Iniciar sesión </Button>
       </Form>
-      <Button className="w-100 mt-2 bg-danger border-0" onClick={registro}>
+      <Button className="w-100 mt-2 border-0"  onClick={registro}>
         Registrarse
       </Button>
 

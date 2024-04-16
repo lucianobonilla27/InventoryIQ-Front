@@ -173,7 +173,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                 Editar usuario
               </Button>
             ) : (
-              <Button className="w-100 mt-3" variant="primary" type="submit">
+              <Button className="w-100 mt-3 border-0" variant="primary" type="submit">
                 Registrarse
               </Button>
             )}

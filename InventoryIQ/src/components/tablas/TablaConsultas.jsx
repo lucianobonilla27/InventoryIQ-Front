@@ -143,7 +143,7 @@ const Admin = () => {
             <h3>No hay consultas disponibles</h3>
           ) : (
             <div className="table-responsive-md">
-              <Table striped bordered hover>
+              <Table striped bordered hover className="text-center align-middle">
                 <thead>
                   <tr>
                     <th>Nombre</th>
@@ -165,8 +165,8 @@ const Admin = () => {
                         <Button variant="primary" onClick={() => handleShowConsulta(consulta)}>Ver</Button>
                       </td>
                       <td className="text-center">
-                        <Button variant="success" onClick={() => handleShowResponder(consulta)}>Responder</Button>
-                        <Button variant="danger" onClick={() => handleDelete(consulta.id)}>Eliminar</Button>
+                        <Button variant="success" style={{ width: "88px", margin: "4px", padding: "4px" }} onClick={() => handleShowResponder(consulta)}>Responder</Button>
+                        <Button variant="danger" style={{ width: "88px", margin: "4px", padding: "4px" }} onClick={() => handleDelete(consulta.id)}>Eliminar</Button>
                       </td>
                     </tr>
                   ))}

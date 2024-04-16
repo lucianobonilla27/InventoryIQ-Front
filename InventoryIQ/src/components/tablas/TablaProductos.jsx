@@ -106,7 +106,7 @@ const TablaProductos = () => {
                 <h2>No Tenemos productos para mostrarte</h2>
             ) : (
                 <div className="table-responsive">
-                    <Table striped bordered hover>
+                    <Table striped bordered hover className="text-center align-middle">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -136,8 +136,8 @@ const TablaProductos = () => {
                                     <td>{product.categoria}</td>
                                     <td>{product.fecha}</td>
                                     <td>
-                                        <Button variant="primary" onClick={() => handleEdit(product)}>Editar</Button>
-                                        <Button variant="danger" onClick={() => handleEliminarClick(product.id)}>Eliminar</Button>
+                                        <Button variant="primary" style={{ width: "88px", margin: "4px", padding: "4px" }} onClick={() => handleEdit(product)}>Editar</Button>
+                                        <Button variant="danger" style={{ width: "88px", margin: "4px", padding: "4px" }} onClick={() => handleEliminarClick(product.id)}>Eliminar</Button>
                                     </td>
                                 </tr>
                             ))}
