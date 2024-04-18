@@ -13,7 +13,7 @@ const Contacto = () => {
     <Col xs={12} md={6} >
     <Col >
       <div className="tituloCol2 text-uppercase text text-center m-3">
-        <h5>Envíanos tu consulta</h5>
+        <h5 className='mb-0'>Envíanos tu consulta</h5>
       </div>
       <FormContacto />
       
@@ -22,7 +22,7 @@ const Contacto = () => {
 
 <Col xs={12} md={6}>
 <div className="tituloCol1 text-uppercase text text-center m-3">
-<h5>Canales de contacto</h5></div>
+<h5 className='mb-0'>Canales de contacto</h5></div>
 <Row className="justify-content-center">
   <Col>
     <Card className='p-1 m-1'>

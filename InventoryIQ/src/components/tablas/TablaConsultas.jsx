@@ -1,7 +1,15 @@
 import React, { useState, useContext } from "react";
-import { Container, Row, Col, Form, Table, Button, Modal } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Table,
+  Button,
+  Modal,
+} from "react-bootstrap";
 import { ConsContext } from "../../context/ConsultasContext";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import FormRespuesta from "../forms/FormRespuesta";
 import "./tablaConsultas.css";
 
@@ -54,56 +62,52 @@ const Admin = () => {
 
   const handleDelete = (consulta) => {
     Swal.fire({
-      title: '¿Estás seguro?',
-      text: '¿Quieres eliminar esta consulta?',
-      icon: 'warning',
+      title: "¿Estás seguro?",
+      text: "¿Quieres eliminar esta consulta?",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'Cancelar',
-      confirmButtonColor: '#dc3545',
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+      confirmButtonColor: "#dc3545",
     }).then((result) => {
       if (result.isConfirmed) {
         deleteConsultas(consulta);
         Swal.fire(
-          '¡Eliminada!',
-          'La consulta ha sido eliminada correctamente.',
-          'success'
+          "¡Eliminada!",
+          "La consulta ha sido eliminada correctamente.",
+          "success"
         );
       }
     });
   };
 
-    const handleEnviarRespuesta = () => {
-      Swal.fire({
-        title: '¿Estás seguro?',
-        text: '¿Quieres enviar la respuesta?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonText: 'Sí, enviar respuesta',
-        cancelButtonText: 'Cancelar',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          handleCloseResponder();
-          Swal.fire(
-            '¡Respuesta enviada!',
-            'La respuesta ha sido enviada correctamente.',
-            'success'
-          );
-        }
-      });
-    };
+  const handleEnviarRespuesta = () => {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¿Quieres enviar la respuesta?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí, enviar respuesta",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleCloseResponder();
+        Swal.fire(
+          "¡Respuesta enviada!",
+          "La respuesta ha sido enviada correctamente.",
+          "success"
+        );
+      }
+    });
+  };
 
-  
   const handleCancelar = () => {
     setShowResponder(false);
   };
 
   return (
     <>
-   
-
       <Container>
-       
         <Row>
           <Col md={9}>
             <div className="p-4">
@@ -143,7 +147,12 @@ const Admin = () => {
             <h3>No hay consultas disponibles</h3>
           ) : (
             <div className="table-responsive-md">
-              <Table striped bordered hover className="text-center align-middle">
+              <Table
+                striped
+                bordered
+                hover
+                className="text-center align-middle"
+              >
                 <thead>
                   <tr>
                     <th>Nombre</th>
@@ -162,11 +171,36 @@ const Admin = () => {
                       <td>{consulta.telefono}</td>
                       <td>{consulta.rubro}</td>
                       <td className="text-center">
-                        <Button variant="primary" onClick={() => handleShowConsulta(consulta)}>Ver</Button>
+                        <Button
+                          variant="primary"
+                          onClick={() => handleShowConsulta(consulta)}
+                        >
+                          Ver
+                        </Button>
                       </td>
                       <td className="text-center">
-                        <Button variant="success" style={{ width: "88px", margin: "4px", padding: "4px" }} onClick={() => handleShowResponder(consulta)}>Responder</Button>
-                        <Button variant="danger" style={{ width: "88px", margin: "4px", padding: "4px" }} onClick={() => handleDelete(consulta.id)}>Eliminar</Button>
+                        <Button
+                          variant="success"
+                          style={{
+                            width: "88px",
+                            margin: "4px",
+                            padding: "4px",
+                          }}
+                          onClick={() => handleShowResponder(consulta)}
+                        >
+                          Responder
+                        </Button>
+                        <Button
+                          variant="danger"
+                          style={{
+                            width: "88px",
+                            margin: "4px",
+                            padding: "4px",
+                          }}
+                          onClick={() => handleDelete(consulta.id)}
+                        >
+                          Eliminar
+                        </Button>
                       </td>
                     </tr>
                   ))}
@@ -184,11 +218,32 @@ const Admin = () => {
         className="custom-modal"
         contentClassName="custom-modal-content"
       >
-        <Modal.Header closeButton className="header-respuesta">
-          <Modal.Title>Consulta</Modal.Title>
+        <Modal.Header
+          className="header-respuesta"
+          style={{ display: "flex",
+          justifyContent: "center" }}
+        >
+          <Modal.Title><u>Consulta</u></Modal.Title>
+          <button
+            className="btn-close"
+            onClick={handleCloseConsulta}
+            style={{
+              padding: "10px",
+              right: "6px",
+              top: "5px",
+              position: "absolute",
+            }}
+          ></button>
         </Modal.Header>
-        <Modal.Body className="body-respuesta" style={{ overflowWrap: 'break-word', wordWrap: 'break-word' }}>
-          {selectConsulta && <p style={{ whiteSpace: 'pre-wrap', margin: '0' }}>{selectConsulta.consulta}</p>}
+        <Modal.Body
+          className="body-respuesta"
+          style={{ overflowWrap: "break-word", wordWrap: "break-word", backgroundColor:"white"  }}
+        >
+          {selectConsulta && (
+            <p style={{ whiteSpace: "pre-wrap", margin: "0" }}>
+              {selectConsulta.consulta}
+            </p>
+          )}
         </Modal.Body>
       </Modal>
 
@@ -199,18 +254,35 @@ const Admin = () => {
         className="custom-modal"
         contentClassName="custom-modal-content"
       >
-        <Modal.Header closeButton className="header-respuesta">
-          <Modal.Title>Responder consulta</Modal.Title>
+        <Modal.Header className="header-respuesta d-flex flex-column" >
+          <Modal.Title><u>Responder consulta</u></Modal.Title>
+          <button
+            className="btn-close"
+            onClick={handleCloseResponder}
+            style={{
+              padding: "10px",
+              right: "6px",
+              top: "5px",
+              position: "absolute",
+            }}
+          ></button>
         </Modal.Header>
         <Modal.Body className="body-respuesta">
           {selectConsulta && <FormRespuesta initialValues={selectConsulta} />}
-          <div className="text-center">
-            <Button variant="secondary" onClick={handleEnviarRespuesta} className="mr-2">
-              Enviar respuesta
-            </Button>
-            <Button variant="primary" onClick={handleCancelar} className="mr-2">
+          <div className="buttonConsulta text-center">
+
+            <Button variant="primary" onClick={handleCancelar} className="buttons">
               Cancelar
             </Button>
+            <Button
+              variant="secondary"
+              onClick={handleEnviarRespuesta}
+              className="buttons"
+            >
+              Enviar respuesta
+            </Button>
+
+            
           </div>
         </Modal.Body>
       </Modal>

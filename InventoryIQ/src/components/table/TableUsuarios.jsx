@@ -163,13 +163,23 @@ const TableUsuarios = () => {
         </Table>
         </div>
       )}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header className="border-0" closeButton>
-          <Modal.Title style={{ textAlign: "center", flex: "1", fontSize: "30px" }}>
-            Editar Usuario
+      <Modal show={show} onHide={handleClose} style={{width: ''}}>
+        <Modal.Header style={{backgroundColor: '#DDE6ED', border: '0'}}>
+          <Modal.Title style={{ textAlign: "center", flex: "1", fontSize: "30px"}}>
+           <u>Editar Usuario</u>
           </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+          <button
+            className="btn-close"
+            onClick={handleClose}
+            style={{
+              padding: "10px",
+              right: "6px",
+              top: "5px",
+              position: "absolute",
+            }}
+          ></button>
+        </Modal.Header >
+        <Modal.Body style={{backgroundColor: '#DDE6ED', borderRadius: '0 0 8px 8px' }}>
           <RegistroFormulario editUsuario={editUsuario} handleClose={handleClose} />
         </Modal.Body>
       </Modal>

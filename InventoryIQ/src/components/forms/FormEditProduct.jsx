@@ -62,7 +62,7 @@ const FormEditProduct = ({ editProducto, handleClose }) => {
 
     return (
         <>
-            <Form onSubmit={handleSubmit} style={{ backgroundColor: '#DDE6ED', padding: '20px', borderRadius: '8px' }}>
+            <Form onSubmit={handleSubmit} style={{ backgroundColor: '#DDE6ED', padding: '10px', borderRadius: '8px' }}>
                 <Row className="text-center">
                     <Col>
                         <Form.Group className="mb-3">
@@ -175,7 +175,7 @@ const FormEditProduct = ({ editProducto, handleClose }) => {
                 </Row>
 
                 <Row>
-                    <Col md={12} className="text-center">
+                    <Col md={12} className="text-center d-flex flex-column">
                         <Button variant="primary" type="submit">
                             Guardar
                         </Button>
