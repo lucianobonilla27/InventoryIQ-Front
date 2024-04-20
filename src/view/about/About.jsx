@@ -66,9 +66,6 @@ const About = () => {
   </Col>
 </Row>
       
-
-
-       
         </Col>
       </Container>
     </>
