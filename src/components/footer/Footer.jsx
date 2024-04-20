@@ -8,7 +8,7 @@ const navigate = useNavigate();
   return (
     <Container fluid= 'true' className="footer-container container-fluid">
       <Row fluid= 'true' className="justify-content-space-between">
-        <Col fluid= 'true'>
+      <Col fluid= 'true'>
           <Card style={{ width: '100%', height: '10rem'}} id="cardFooter">
             <Card.Body>
               <img src="./src/img/logo.jpeg" width= "100" className="rounded-circle" id="img-card-footer" alt="Logo" />
@@ -41,13 +41,13 @@ const navigate = useNavigate();
         </Col>
 
         <Col fluid= 'true'>
-          <Card style={{ width: '100%', height: '10rem' }} id="cardFooter">
-            <Card.Body>
-              <Button id="btn-footer" variant="primary" onClick={() => navigate("/about")}>Quienes somos</Button>
-              <Button id="btn-footer" variant="primary" onClick={() => navigate("/error404")}>Preguntas frecuentes</Button>
-              <Button id="btn-footer" variant="primary" onClick={() => navigate("/contacto")}>Contacto</Button>
-            </Card.Body>
-          </Card>
+        <Card style={{ width: '100%' }} id="cardFooter">
+  <Card.Body className="d-flex flex-column align-items-center justify-content-center">
+    <Button id="btn-footer" variant="primary" onClick={() => navigate("/about")} className="mb-0">Quienes somos</Button>
+    <Button id="btn-footer" variant="primary" onClick={() => navigate("/error404")} className="mb-0">Preguntas frecuentes</Button>
+    <Button id="btn-footer" variant="primary" onClick={() => navigate("/contacto")} className="mb-0">Contacto</Button>
+  </Card.Body>
+</Card>
         </Col>
       </Row>
     </Container>

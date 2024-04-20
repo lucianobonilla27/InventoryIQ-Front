@@ -1,9 +1,10 @@
 
-import { Container, Col, Button, Card } from 'react-bootstrap';
+import { Container, Col, Button, Card, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './about.css';
 import CardAbout from '../../components/cards/CardAbout';
 import CardServicios from '../../components/cards/CardServicios';
+import CardSucursales from '../../components/cards/CardSucursales';
 
 const About = () => {
   const navigate = useNavigate(); 
@@ -36,23 +37,38 @@ const About = () => {
 
          <CardAbout/>
 
-         
+
           <div className="titulo text-uppercase text text-center m-2">
             <h5 className='mb-0'>Nuestros servicios</h5>
           </div>
 
-         <CardServicios/> 
+         <CardServicios/>
+
+         <div className="titulo text-uppercase text text-center m-2">
+            <h5 className='mb-0'>Nuestras sucursales</h5>
+          </div>
           
-          <Button variant="primary" className="mr-2" style={{ width: '23%' }}>Go somewhere</Button>
-          
-          <Button variant="primary" style={{ width: '23%' }}>Go somewhere</Button>
-        </Col>
+          <CardSucursales/>
+
+          <div className="titulo text-uppercase text text-center m-2">
+            <h5 className='mb-0'>Nuestros costos</h5>
+          </div>
+
+          <Row className="justify-content-between custom-padding p-1">
+  <Col xs={12} md={4} className="mb-2 mb-md-3 d-flex justify-content-center align-items-center">
+    <Button variant="primary" block onClick={() => navigate("/contacto")} className="equal-width">Solicitar Cotización</Button>
+  </Col>
+  <Col xs={12} md={4} className="mb-2 mb-md-3 d-flex justify-content-center align-items-center">
+    <Button variant="primary" block onClick={() => navigate("/error404")} className="equal-width">Descuentos para clientes</Button>
+  </Col>
+  <Col xs={12} md={4} className="mb-2 mb-md-3 d-flex justify-content-center align-items-center">
+    <Button variant="primary" block onClick={() => navigate("/error404")} className="equal-width">Planes y precios</Button>
+  </Col>
+</Row>
+      
 
 
-
-
-        <Col className="text-center">
-          <Button type="submit" className="d-block mx-auto m-3" onClick={() => navigate("/")}>Volver a la página principal</Button>
+       
         </Col>
       </Container>
     </>
