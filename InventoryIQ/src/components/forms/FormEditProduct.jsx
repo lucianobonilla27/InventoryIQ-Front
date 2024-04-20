@@ -8,7 +8,7 @@ const FormEditProduct = ({ editProducto, handleClose }) => {
 
     const [producto, setProducto] = useState(
         {
-            id: editProducto.id,
+            _id: editProducto._id,
             nombre: editProducto.nombre,
             descripcion: editProducto.descripcion,
             imagenUrl: editProducto.imagenUrl,

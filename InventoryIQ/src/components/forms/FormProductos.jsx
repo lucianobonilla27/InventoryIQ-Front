@@ -8,7 +8,7 @@ const FormProductos = () => {
 
     const [producto, setProducto] = useState(
         {
-            id: crypto.randomUUID(),
+            _id: crypto.randomUUID(),
             nombre: "",
             descripcion: "",
             imagenUrl: "",
@@ -50,7 +50,7 @@ const FormProductos = () => {
         // Agrega el producto al contexto
         addProductos({
             ...producto,
-            id: crypto.randomUUID(),
+            _id: crypto.randomUUID(),
             imagenUrl: imagen,
         });
 
@@ -64,7 +64,7 @@ const FormProductos = () => {
 
         // Reinicia el estado para el próximo producto
         setProducto({
-            id: crypto.randomUUID(),
+            _id: crypto.randomUUID(),
             nombre: '',
             descripcion: '',
             imagenUrl: '',

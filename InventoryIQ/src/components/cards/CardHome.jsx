@@ -3,7 +3,7 @@ import FormEditStock from "../forms/FormEditStock";
 import { useState, useEffect } from "react";
 
 const CardHome = ({
-  id,
+  _id,
   nombre,
   descripcion,
   imagenUrl,
@@ -12,7 +12,7 @@ const CardHome = ({
   fecha,
 }) => {
   const [product, setProduct] = useState({
-    id,
+    _id,
     nombre,
     descripcion,
     imagenUrl,

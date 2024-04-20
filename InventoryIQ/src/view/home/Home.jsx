@@ -88,8 +88,8 @@ const Home = () => {
           ) : (
             filtrarProductos().map((producto) => (
               <CardHome
-                key={producto.id}
-                id={producto.id}
+                key={producto._id}
+                _id={producto._id}
                 nombre={producto.nombre}
                 descripcion={producto.descripcion}
                 imagenUrl={producto.imagenUrl}

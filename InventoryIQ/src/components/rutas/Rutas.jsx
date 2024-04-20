@@ -11,13 +11,14 @@ import Error404 from "../../view/error404/Error404.jsx";
 
 
 const Rutas = () => {
+    const admin = JSON.parse(localStorage.getItem("user"))
   return (
    
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contacto" element={<Contacto/>} />
-        <Route path="/admin" element={<Admin/>} />
+        {admin?.admin? <Route path="/admin" element={<Admin/>} /> : null}
         <Route path="/registro" element={<Registro />} />
         <Route path="/error404" element={<Error404/>} />
       </Routes>

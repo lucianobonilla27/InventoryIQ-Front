@@ -14,7 +14,7 @@ const TableUsuarios = () => {
   const handleClose = () => setShow(false);
 
   const handleEdit = (user) => {
-    if (user.email === "admin@admin.com" && user.password === "Admin159@") {
+    if (user.email === "admin@admin.com") {
       swal.fire({
         title: "Acción no permitida",
         text: "No puedes editar el usuario administrador.",
@@ -28,7 +28,7 @@ const TableUsuarios = () => {
   };
 
   const handleDelete = (user) => {
-    if (user.email === "admin@admin.com" && user.password === "Admin159@") {
+    if (user.email === "admin@admin.com") {
       swal.fire({
         title: "Acción no permitida",
         text: "No puedes eliminar el usuario administrador.",
@@ -49,7 +49,7 @@ const TableUsuarios = () => {
         })
         .then((result) => {
           if (result.isConfirmed) {
-            deleteUsuarios(user.id);
+            deleteUsuarios(user._id);
             swal.fire({
               title: "Eliminado",
               text: "El usuario ha sido eliminado exitosamente",
@@ -75,14 +75,14 @@ const TableUsuarios = () => {
     if (rolSeleccionado !== "") {
       usuariosFiltrados = usuariosFiltrados.filter(
         (usuario) =>
-          (rolSeleccionado === "admin" && usuario.isAdmin) ||
-          (rolSeleccionado === "no-admin" && !usuario.isAdmin)
+          (rolSeleccionado === "admin" && usuario.admin) ||
+          (rolSeleccionado === "no-admin" && !usuario.admin)
       );
     }
 
     if (busqueda.trim() !== "") {
       usuariosFiltrados = usuariosFiltrados.filter((usuario) =>
-        usuario.nombre.toLowerCase().includes(busqueda.toLowerCase())
+        usuario.name.toLowerCase().includes(busqueda.toLowerCase())
       );
     }
 
@@ -136,11 +136,11 @@ const TableUsuarios = () => {
           </thead>
           <tbody>
             {filtrarUsuarios().map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.nombre}</td>
+              <tr key={user._id}>
+                <td>{user._id}</td>
+                <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.isAdmin ? "Si" : "No"}</td>
+                <td>{user.admin ? "Si" : "No"}</td>
                 <td>
                   <Button
                     variant="primary"

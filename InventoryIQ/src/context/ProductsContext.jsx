@@ -10,7 +10,7 @@ const ProductsContext = ({ children }) => {
 
   const getProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:7000/productos");
+      const response = await axios.get("https://inventoryiq.onrender.com/api/products");
       setProductos(response.data);
     } catch (error) {
       console.log(error);
@@ -22,7 +22,7 @@ const ProductsContext = ({ children }) => {
   const addProductos = async (producto) => {
     try {
       const response = await axios.post(
-        "http://localhost:7000/productos",
+        "https://inventoryiq.onrender.com/api/agregarProduct",
         producto
       ); 
       setProductos([...productos, response.data]);
@@ -36,7 +36,7 @@ const ProductsContext = ({ children }) => {
   const editarProducto = async (producto) => {
     try {
       await axios.put(
-        `http://localhost:7000/productos/${producto.id}`,
+        `https://inventoryiq.onrender.com/api/editarProduct/${producto._id}`,
         producto
       ); 
 
@@ -48,11 +48,11 @@ const ProductsContext = ({ children }) => {
 
  
 
-  const deleteProductos = async (id) => {
+  const deleteProductos = async (_id) => {
     
     try {
-      await axios.delete(`http://localhost:7000/productos/${id}`);
-      setProductos(productos.filter((producto) => producto.id !== id)); 
+      await axios.delete(`https://inventoryiq.onrender.com/api/eliminarProduct/${_id}`);
+      setProductos(productos.filter((producto) => producto._id !== _id)); 
     } catch (error) {
       console.log(error);
     }

@@ -165,7 +165,7 @@ const Admin = () => {
                 </thead>
                 <tbody>
                   {filtrarConsultas().map((consulta) => (
-                    <tr key={consulta.id}>
+                    <tr key={consulta._id}>
                       <td>{consulta.nombre}</td>
                       <td>{consulta.mail}</td>
                       <td>{consulta.telefono}</td>
@@ -197,7 +197,7 @@ const Admin = () => {
                             margin: "4px",
                             padding: "4px",
                           }}
-                          onClick={() => handleDelete(consulta.id)}
+                          onClick={() => handleDelete(consulta._id)}
                         >
                           Eliminar
                         </Button>

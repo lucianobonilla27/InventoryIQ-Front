@@ -18,7 +18,7 @@ const TablaProductos = () => {
     setShow(true);
   };
 
-  const handleEliminarClick = (id) => {
+  const handleEliminarClick = (_id) => {
     Swal.fire({
       title: "¿Estás seguro?",
       text: "Una vez eliminado, no podrás recuperar este producto.",
@@ -30,7 +30,7 @@ const TablaProductos = () => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteProductos(id);
+        deleteProductos(_id);
         Swal.fire({
           title: "Eliminado",
           text: "El producto se ha eliminado correctamente.",
@@ -121,8 +121,8 @@ const TablaProductos = () => {
             </thead>
             <tbody>
               {filtrarProductos().map((product) => (
-                <tr key={product.id}>
-                  <td>{product.id}</td>
+                <tr key={product._id}>
+                  <td>{product._id}</td>
                   <td
                     style={{
                       position: "relative",
@@ -160,7 +160,7 @@ const TablaProductos = () => {
                     <Button
                       variant="danger"
                       style={{ width: "88px", margin: "4px", padding: "4px" }}
-                      onClick={() => handleEliminarClick(product.id)}
+                      onClick={() => handleEliminarClick(product._id)}
                     >
                       Eliminar
                     </Button>

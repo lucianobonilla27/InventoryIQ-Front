@@ -12,15 +12,16 @@ const Login = ({ handleClose }) => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  const { usuarios } = useContext(UsuariosProvider); //son los usuarios que me traigo de la db.
+  const { loginUser, usuarioLogeado } = useContext(UsuariosProvider); //son los usuarios que me traigo de la db.
   // console.log(usuarios, "usuarios desde el login");
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     try { //usuarios.find son los usuarios que me traigo de la db.
-      const user = usuarios.find((user) => user.email === email && user.password === password); //recorre el array de usuarios, los guarda en user y compara los datos ingresados con los de la db.
-      if (user) {
+      // const user = usuarios.find((user) => user.email === email && user.password === password); //recorre el array de usuarios, los guarda en user y compara los datos ingresados con los de la db.
+      await loginUser({email,password})
+      if (usuarioLogeado) {
         Swal.fire({
           title: "Bienvenido",
           text: "Sesión iniciada con éxito",
@@ -28,7 +29,7 @@ const Login = ({ handleClose }) => {
           confirmButtonText: "Aceptar",
           timer: 2000,
         }).then(() => {
-          localStorage.setItem("user", JSON.stringify(user)); // Guardamos los datos del usuario en el localstorage.
+          localStorage.setItem("user", JSON.stringify(usuarioLogeado)); // Guardamos los datos del usuario en el localstorage.
           window.location.reload(); // Recargar la página
           handleClose();
         });
@@ -41,7 +42,7 @@ const Login = ({ handleClose }) => {
           timer: 2000,
         });
       }
-
+          
 
     } catch (error) {
       console.log(error)

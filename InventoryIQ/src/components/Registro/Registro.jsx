@@ -18,12 +18,12 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
   const { addUser, editarUsuario } = useContext(UsuariosProvider);
 
   const [usuario, setUsuario] = useState({
-    id: editUsuario ? editUsuario.id : uuidv4(),
-    nombre: editUsuario ? editUsuario.nombre : "",
+    _id: editUsuario ? editUsuario._id : uuidv4(),
+    name: editUsuario ? editUsuario.name : "",
     email: editUsuario ? editUsuario.email : "",
     password: editUsuario ? editUsuario.password : "",
     confirmPassword: editUsuario ? editUsuario.confirmPassword : "",
-    isAdmin: editUsuario ? editUsuario.isAdmin : false,
+    admin: editUsuario ? editUsuario.admin : false,
   });
 
   const handleChange = (e) => {
@@ -38,7 +38,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!usuario.nombre || !usuario.email || !usuario.password || !usuario.confirmPassword) {
+    if (!usuario.name || !usuario.email || !usuario.password || !usuario.confirmPassword) {
       swal.fire ({
         title: "Error",
         text: "Por favor, complete todos los campos",
@@ -70,7 +70,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
     }
 
     if (editUsuario) {
-      editarUsuario({...editUsuario, isAdmin: usuario.isAdmin});
+      editarUsuario({...editUsuario, admin: usuario.admin});
       swal.fire({
         title: "Usuario editado",
         text: "Usuario editado con éxito",
@@ -80,12 +80,12 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
       });
       handleClose();
       setUsuario({
-        id: uuidv4(),
-        nombre: "",
+        _id: uuidv4(),
+        name: "",
         email: "",
         password: "",
         confirmPassword: "",
-        isAdmin: false,
+        admin: false,
       });
     } else {
       addUser(usuario);
@@ -96,12 +96,12 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
         confirmButtonText: "Aceptar",
       });
       setUsuario({
-        id: uuidv4(),
-        nombre: "",
+        _id: uuidv4(),
+        name: "",
         email: "",
         password: "",
         confirmPassword: "",
-        isAdmin: false,
+        admin: false,
       });
     }
   };
@@ -116,10 +116,10 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ingresa tu nombre"
-                value={usuario.nombre}
+                placeholder="Ingresa tu name"
+                value={usuario.name}
                 onChange={handleChange}
-                name="nombre"
+                name="name"
                 disabled={editUsuario ? true : false}
               />
             </Form.Group>
@@ -161,9 +161,9 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
                 <FormCheck
                   type="checkbox"
                   label="Admin"
-                  checked={usuario.isAdmin}
+                  checked={usuario.admin}
                   onChange={handleChange}
-                  name="isAdmin"
+                  name="admin"
                 />
               </FormGroup>
             ) : null}

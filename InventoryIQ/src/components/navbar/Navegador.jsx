@@ -34,7 +34,7 @@ const Navegador = () => {
             <Nav className="ms-auto">
               {" "}
               {/* SI USER ES TRUE ENTRA COMO USUARIO NORMAL, SI ISADMIN ES TRUE MOSTRAME EL ADMIN. */}
-              {user?.isAdmin ? (
+              {user?.admin ? (
                 <Nav.Link onClick={() => navigate("/admin")}>Admin</Nav.Link>
               ) : null}
               <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
