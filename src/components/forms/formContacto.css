@@ -1,0 +1,27 @@
+
+.form-control {
+    border: 2px solid #526D82;
+    background-color: #FFFFFF;
+  }
+
+  .form-select {
+    border: 2px solid #526D82;
+    background-color: #FFFFFF;
+  }
+  
+  .btn {
+    background-color:#27374D ;
+    border: 2px solid #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 3%;
+  }
+  
+  .btn:hover {
+    background-color:#526D82; ; 
+    border: 2px solid #FFFFFF;
+  }
+
+  .form-label {
+    color: #27374D;
+    font-weight: bold;
+  }
