@@ -1,12 +1,8 @@
-/* Estilos personalizados para el componente AboutUs */
-
-/* Ajustar el tamaño de las imágenes del carrusel */
 .carousel-item img {
-    height: 20vw;
+    height: 30vw;
     object-fit: cover;
   }
   
-  /* Estilos para las cards de los integrantes */
   .card {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
