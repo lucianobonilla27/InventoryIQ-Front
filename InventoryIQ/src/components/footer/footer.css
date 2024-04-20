@@ -1,0 +1,71 @@
+.footer-container {
+    background-color: #FFFFFF;
+    padding-bottom: 0%;
+   
+   }
+   #cardFooter{
+       background-color: #27374D;
+       text-align: center;
+       padding: 5px;
+       flex-direction: column;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 10px 1px 10px 1px;  
+   }
+   
+   #img-card-footer {
+       margin-right: auto;
+   }
+   
+   #btn-footer{
+       background-color: #DDE6ED;
+       border: 2px solid #FFFFFF;
+       border-radius: 25px;
+       width: 15rem;
+       padding: 2px;
+       margin: 5px;
+       text-align: center;
+       color:#526D82;
+        
+   }
+   .btn-footer:hover  {
+       
+       border: 2px solid #000000;
+      
+   }
+   
+   footer .footer-text {
+       color: #526D82;
+   }
+   
+   .text-center {
+       text-align: center;
+   }
+   
+   .icon-footer {
+     
+       width: 25px;
+       height: 25px;
+   }
+   
+   .container-icon-footer {
+   
+       background-color: #FFFFFF;
+       color:#FFFFFF;
+       border-radius: 25px;
+       width: 15rem;
+       border: 3px solid #0000;
+       padding: 0px;
+       margin: 5px;
+      
+   }
+   #h5 {
+       color:#FFFFFF;  ;
+   }
+   
+   #h7 {
+       color:#FFFFFF;
+   }
+   
+   

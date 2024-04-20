@@ -1,0 +1,192 @@
+{
+  "usuarios": [
+    {
+      "id": "592731e1-2ecc-4112-b90e-76cc547cea92",
+      "nombre": "admin",
+      "email": "admin@admin.com",
+      "password": "Admin159@",
+      "confirmPassword": "Admin159@",
+      "isAdmin": true
+    },
+    {
+      "id": "662ddeb3-707a-4371-afde-efe880f7dea8",
+      "nombre": "facundo",
+      "email": "facu@gmail.com",
+      "password": "Facundo1@",
+      "confirmPassword": "Facundo1@",
+      "isAdmin": false
+    },
+    {
+      "id": "7e4aed34-d903-4757-80b2-e92e2a8c1d4a",
+      "nombre": "Luciano",
+      "email": "lucianobonilla27@gmail.com",
+      "password": "105716Lucho@",
+      "confirmPassword": "105716Lucho@",
+      "isAdmin": false
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Fideos Marolio",
+      "descripcion": "Spaguetti",
+      "imagenUrl": "https://voyporvos.com.ar/wp-content/uploads/2022/02/Fideos-Marolio-X-500-Gs-Spaghetti.webp",
+      "cantidad": "10",
+      "categoria": "Pastas",
+      "fecha": "2024-03-30"
+    },
+    {
+      "id": "2",
+      "nombre": "Coca-Cola",
+      "descripcion": "2.25 litros",
+      "imagenUrl": "https://dcdn.mitiendanube.com/stores/001/108/127/products/coca-cola-1-751-43573b69cf1871154d16297650173840-480-0.png",
+      "cantidad": 5,
+      "categoria": "Bebidas",
+      "fecha": "2024-03-29"
+    },
+    {
+      "id": "3",
+      "nombre": "Pepsi",
+      "descripcion": "1.5 litros",
+      "imagenUrl": "https://m.media-amazon.com/images/S/aplus-media/sota/12db253b-142b-43d7-ade2-d5e67d5221f7.__CR0,0,300,300_PT0_SX300_V1___.png",
+      "cantidad": 20,
+      "categoria": "Bebidas",
+      "fecha": "2024-03-29"
+    },
+    {
+      "id": "4",
+      "nombre": "Arroz Gallo",
+      "descripcion": "Arroz blanco",
+      "imagenUrl": "https://www.recetasgallo.com.ar/wp-content/uploads/2017/03/render-oro-2023.png",
+      "cantidad": 15,
+      "categoria": "Granos",
+      "fecha": "2024-03-29"
+    },
+    {
+      "id": "5",
+      "nombre": "Leche La Serenísima",
+      "descripcion": "Entera",
+      "imagenUrl": "https://dcdn.mitiendanube.com/stores/001/108/127/products/la-serenisima-larga-vida-carton-enterabyb1-a039b493d7e8f12b6715888519393780-640-0.png",
+      "cantidad": 8,
+      "categoria": "Lácteos",
+      "fecha": "2024-03-29"
+    },
+    {
+      "id": "6",
+      "nombre": "Pan Bimbo",
+      "descripcion": "Pan de molde blanco",
+      "imagenUrl": "https://www.bimbo.es/uploads/bimbocorp/BIMBO_GRANDE_2023.png?7",
+      "cantidad": 12,
+      "categoria": "Panadería",
+      "fecha": "2024-03-29"
+    },
+    {
+      "id": "7",
+      "nombre": "Yogurt Yoplait",
+      "descripcion": "Frutilla",
+      "imagenUrl": "https://www.yoplait.com/_next/image?url=https%3A%2F%2Fprodcontent.yoplait.com%2Fwp-content%2Fuploads%2F2019%2F08%2FYoplait-Original-Strawberry-Yogurt-460x460-1.png&w=1024&q=75",
+      "cantidad": 10,
+      "categoria": "Lácteos",
+      "fecha": "2024-03-29"
+    },
+    {
+      "id": "8",
+      "nombre": "Jugo de naranja",
+      "descripcion": "Natural exprimido",
+      "imagenUrl": "https://acdn.mitiendanube.com/stores/001/157/846/products/citric-naranja-tetra-500ml1-f6a1b4aef79d60a75416319875361481-1024-1024.png",
+      "cantidad": 15,
+      "categoria": "Bebidas",
+      "fecha": "2024-03-29"
+    }
+  ],
+  "consultas": [
+    {
+      "id": "2",
+      "nombre": "Elena Fernández",
+      "mail": "elenaf@example.com",
+      "telefono": 3816001111,
+      "rubro": "Carnes",
+      "consulta": "Por favor, infórmeme sobre el stock y los precios de los cortes de carne de res."
+    },
+    {
+      "id": "3",
+      "nombre": "Ana Rodríguez",
+      "mail": "anarodriguez@example.com",
+      "telefono": 3813334444,
+      "rubro": "Panadería",
+      "consulta": "¿Cuál es la disponibilidad y los precios de los panes integrales?"
+    },
+    {
+      "id": "4",
+      "nombre": "Luis González",
+      "mail": "luisgonzalez@example.com",
+      "telefono": 3815889999,
+      "rubro": "Granos",
+      "consulta": "Quiero saber el stock y los precios de los diferentes tipos de arroz disponibles."
+    },
+    {
+      "id": "5",
+      "nombre": "Laura Díaz",
+      "mail": "lauradiaz@example.com",
+      "telefono": 3815554444,
+      "rubro": "Frutas",
+      "consulta": "¿Tienen disponibilidad de arándanos y cuál es el precio por kilo?"
+    },
+    {
+      "id": "26855a72-9bf9-478d-bfda-26db37ca63d8",
+      "nombre": "Bautista Luna",
+      "mail": "bauti@gmail.com",
+      "telefono": "3815447778",
+      "rubro": "Snacks",
+      "consulta": "precio"
+    },
+    {
+      "id": "e0e03500-973b-4f21-80d5-d0d292cae6d1",
+      "nombre": "Alejandro Luna",
+      "mail": "aleluna_777@gmail.com",
+      "telefono": "3987788895",
+      "rubro": "Panadería",
+      "consulta": "dwsadsads"
+    },
+    {
+      "id": "860dd1f9-ac52-4bf9-a6f2-c0639b83966a",
+      "nombre": "Javier Milei",
+      "mail": "leon@gmail.com",
+      "telefono": "3814645889",
+      "rubro": "Panadería",
+      "consulta": "sdsadsa"
+    },
+    {
+      "id": "1cbb1f98-f883-44ba-89c2-e96b62df8be2",
+      "nombre": "Osvaldo Jaldo",
+      "mail": "gobernador@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Lácteos",
+      "consulta": "tengo para ofrecerles lacteos de buena calidad de Trancas"
+    },
+    {
+      "id": "c088a424-2ccf-454e-a379-2664784d4325",
+      "nombre": "Victoria Villarroel",
+      "mail": "laVice@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Bebidas",
+      "consulta": "tienen Fernet en cantidad? Tambien quisiera saber el precio de 100 botellas."
+    },
+    {
+      "id": "8555290d-ce28-4e15-89f1-93d74a060aea",
+      "nombre": "MANUEL BELGRANO",
+      "mail": "batallatuc@gmail.com",
+      "telefono": "381445558",
+      "rubro": "Panadería",
+      "consulta": "Tienen pan lactal para realizar una compra de 1000 paquetes? Es para un ejercito de 800 soldados. Muchas Gracias"
+    },
+    {
+      "id": "aa9215aa-0adb-451f-a5dc-75b8cf1561fa",
+      "nombre": "María D'arterio",
+      "mail": "mariadart@hotmail.com",
+      "telefono": "381445558",
+      "rubro": "Panadería",
+      "consulta": "Buenas tienen disponible para vender 20 kg de pan de miga?"
+    }
+  ]
+}
