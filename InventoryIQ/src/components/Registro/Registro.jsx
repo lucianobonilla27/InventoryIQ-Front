@@ -21,8 +21,8 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
     _id: editUsuario ? editUsuario._id : uuidv4(),
     name: editUsuario ? editUsuario.name : "",
     email: editUsuario ? editUsuario.email : "",
-    password: editUsuario ? editUsuario.password : "",
-    confirmPassword: editUsuario ? editUsuario.confirmPassword : "",
+    password: "",
+    repeatPasword: "",
     admin: editUsuario ? editUsuario.admin : false,
   });
 
@@ -38,7 +38,13 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!usuario.name || !usuario.email || !usuario.password || !usuario.confirmPassword) {
+    // Verificar si estamos en modo de edición y si los campos de contraseña están en blanco
+    if (editUsuario && (!usuario.password || !usuario.repeatPasword)) {
+      enviarFormulario();
+      return;
+    }
+
+    if (!usuario.name || !usuario.email || !usuario.password || !usuario.repeatPasword) {
       swal.fire ({
         title: "Error",
         text: "Por favor, complete todos los campos",
@@ -48,7 +54,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
       return;
     }
 
-    if (usuario.password !== usuario.confirmPassword) {
+    if (usuario.password !== usuario.repeatPasword) {
       swal.fire ({
         title: "Error",
         text: "Las contraseñas no coinciden",
@@ -69,6 +75,10 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
       return;
     }
 
+    enviarFormulario();
+  };
+
+  const enviarFormulario = () => {
     if (editUsuario) {
       editarUsuario({...editUsuario, admin: usuario.admin});
       swal.fire({
@@ -84,7 +94,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
         name: "",
         email: "",
         password: "",
-        confirmPassword: "",
+        repeatPasword: "",
         admin: false,
       });
     } else {
@@ -100,7 +110,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
         name: "",
         email: "",
         password: "",
-        confirmPassword: "",
+        repeatPasword: "",
         admin: false,
       });
     }
@@ -116,7 +126,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ingresa tu name"
+                placeholder="Ingresa tu nombre"
                 value={usuario.name}
                 onChange={handleChange}
                 name="name"
@@ -150,9 +160,9 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
               <Form.Control
                 type="password"
                 placeholder="Repite tu contraseña"
-                value={usuario.confirmPassword}
+                value={usuario.repeatPasword}
                 onChange={handleChange}
-                name="confirmPassword"
+                name="repeatPasword"
                 disabled={editUsuario ? true : false}
               />
             </Form.Group>
