@@ -40,10 +40,8 @@ const Contacto = () => {
             <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer"><img src="../src/img/square-x-twitter.svg" className="icon" alt="Twitter" /></a>
             <a href="https://www.messenger.com/?locale=es_ES" target="_blank" rel="noopener noreferrer"><img src="../src/img/facebook-messenger.svg" className="icon" alt="Messenger" /></a>
           </div>
-          <Card.Title className='text-card m-1'>OTROS CANALES</Card.Title>  
-
+          <Card.Title className='text-card m-1'>OTROS CANALES</Card.Title> 
           <DatosContacto />
-         
       </Card.Body>
     </Card>
   </Col>

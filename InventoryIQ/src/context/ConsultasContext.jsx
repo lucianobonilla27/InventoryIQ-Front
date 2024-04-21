@@ -16,25 +16,25 @@ const ConsultasContext = ({ children }) => {
       console.log(error); 
     }
   };
-//ADD CONSULTAS
+  //ADD CONSULTAS
   const addConsultas = async (consulta) => {
     try {
       const response = await axios.post('https://inventoryiq.onrender.com/api/newConsulta', consulta);
-      setConsultas(consultas => [...consultas, response.data]);
+        setConsultas(response.data);
     } catch (error) {
       console.log(error); 
     }
   };
-//DELETE CONSULTAS
+  
+  // DELETE CONSULTAS
   const deleteConsultas = async (id) => {
     try {
       await axios.delete(`https://inventoryiq.onrender.com/api/deleteConsulta/${id}`);
-      setConsultas(consultas => consultas.filter(consulta => consulta.id !== id)); 
+      setConsultas(consultas => consultas.filter(consulta => consulta._id !== String(id))); 
     } catch (error) {
       console.log(error); 
     }
   };
-
   useEffect(() => {
     getConsultas();
   }, []);

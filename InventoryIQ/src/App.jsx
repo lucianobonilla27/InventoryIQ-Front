@@ -15,14 +15,14 @@ function App() {
 
       <UsuariosContext>
         <ProductsContext>
-          <ConsultasContext>
-            <Navegador />
+        <ConsultasContext>
+        <Navegador />
             <Rutas />
             <Footer />
-          </ConsultasContext>
+            </ConsultasContext> 
         </ProductsContext>
       </UsuariosContext>
-
+      
 
     </>
   )

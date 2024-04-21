@@ -90,6 +90,3 @@ const Login = ({ handleClose }) => {
 };
 
 export default Login;
-
-
-

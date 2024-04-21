@@ -1,20 +1,12 @@
-import React, { useState, useContext } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Table,
-  Button,
-  Modal,
-} from "react-bootstrap";
+import React, { useState, useContext} from "react";
+import {Container,Row,Col,Form,Table,Button,Modal,} from "react-bootstrap";
 import { ConsContext } from "../../context/ConsultasContext";
 import Swal from "sweetalert2";
 import FormRespuesta from "../forms/FormRespuesta";
 import "./tablaConsultas.css";
 
 const Admin = () => {
-  const { consultas, deleteConsultas } = useContext(ConsContext);
+  const { consultas, deleteConsultas} = useContext(ConsContext);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
   const [busqueda, setBusqueda] = useState("");
   const [showResponder, setShowResponder] = useState(false);
