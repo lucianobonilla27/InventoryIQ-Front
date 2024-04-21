@@ -80,11 +80,10 @@ const UsuariosContext = ({children}) => {
             const response = await axios.post(`https://inventoryiq.onrender.com/api/login`, usuario);
             const {token} = response.data
             const decoToken = jwtDecode(token)
-            setusuarioLogeado(decoToken)
-
-            localStorage.setItem("user", JSON.stringify(response.data));
+            localStorage.setItem("user", JSON.stringify(decoToken));
+            return setusuarioLogeado(decoToken)
         } catch (error) {
-            console.log(error)
+            throw new Error(error);
         }
     }
 

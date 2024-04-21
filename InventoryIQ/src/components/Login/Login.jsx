@@ -29,8 +29,7 @@ const Login = ({ handleClose }) => {
           confirmButtonText: "Aceptar",
           timer: 2000,
         }).then(() => {
-          localStorage.setItem("user", JSON.stringify(usuarioLogeado)); // Guardamos los datos del usuario en el localstorage.
-          window.location.reload(); // Recargar la página
+          navigate(0)
           handleClose();
         });
       } else {

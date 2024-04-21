@@ -89,8 +89,8 @@ const formErrors = {};
                         placeholder="Juan Perez"
                         isInvalid={!!errors.nombre}
                         pattern="[A-Za-zÁÉÍÓÚáéíóúÜüÑñ' ]{1,}"
-                        maxlength="50"
-                        minlength="2"
+                        maxLength="50"
+                        minLength="2"
                     />
                     
                     <Form.Control.Feedback type="invalid">{errors.nombre}</Form.Control.Feedback>
@@ -120,8 +120,8 @@ const formErrors = {};
                         placeholder="3815489665"
                         isInvalid={!!errors.telefono}
                         pattern="^[0-9]+$"
-                        minlength="6"
-                        maxlength="15"
+                        minLength="6"
+                        maxLength="15"
                     />
                     <Form.Control.Feedback type="invalid">{errors.telefono}</Form.Control.Feedback>
                 </Form.Group>
