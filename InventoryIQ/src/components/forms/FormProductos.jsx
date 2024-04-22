@@ -72,6 +72,11 @@ const FormProductos = () => {
             categoria: '',
             fecha: new Date().toISOString().slice(0, 10), // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
         });
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000);
+       
     };
 
 

@@ -10,7 +10,7 @@ const ConsultasContext = ({ children }) => {
   //GET CONSULTAS
   const getConsultas = async () => {
     try {
-      const response = await axios.get('https://inventoryiq.onrender.com/api/contact ');
+      const response = await axios.get('https://inventoryiq.onrender.com/api/contact');
       setConsultas(response.data);
     } catch (error) {
       console.log(error); 
