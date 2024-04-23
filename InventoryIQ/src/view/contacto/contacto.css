@@ -1,0 +1,30 @@
+.text-uppercase {
+    border-radius: 25px;
+    color: #FFFFFF;
+    margin: 2%; 
+    padding: 2px;
+}
+
+.FormContacto {
+    padding: 20px; 
+}
+
+.contacto-container {
+    background-color: #DDE6ED;
+    margin-top: 1%;
+    padding-bottom: 5px;
+}
+
+.text-card {
+    font-size: 15px;
+    background-color: #9DB2BF;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 2px; 
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+   margin: 10px;
+}

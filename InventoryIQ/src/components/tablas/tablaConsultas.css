@@ -1,0 +1,29 @@
+.custom-modal-content {
+    background-color: #DDE6ED;
+    padding: 10px;
+    border-radius: 10px; 
+  }
+
+  .body-respuesta {
+    background-color:  #DDE6ED;
+    border-radius: 10px;
+  }
+
+  .header-respuesta {
+    padding: 5px;
+    margin: 10px;
+  }
+
+ .buttons {
+  margin-right: 10px;
+ } 
+
+ @media (max-width: 576px) { 
+
+  .buttonConsulta {
+    display: flex;
+    flex-direction: column;
+
+ }
+  }
+ 

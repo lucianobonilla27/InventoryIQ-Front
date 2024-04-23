@@ -1,0 +1,36 @@
+
+.circle-img {
+    width: 90%; /* Cambiado a porcentaje */
+    height: auto; /* Cambiado a 'auto' para mantener la proporción */
+    overflow: hidden;
+    border-radius: 50%; 
+    position: relative;
+    margin: 5px auto;
+}
+
+.circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-hover {
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, transform-origin 0.3s ease;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5%;
+    border: solid;
+    color: #526D82; 
+}
+
+.card-hover:hover {
+    transform: scale(1.10) translateY(-5px); 
+    box-shadow: 0px 0px 1000px rgba(0, 0, 0, 0.3);
+    transform-origin: center; 
+}
+
+.max-width-card {
+    max-width: 300px; /* Ajusta el valor según sea necesario */
+}
