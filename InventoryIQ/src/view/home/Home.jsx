@@ -4,6 +4,8 @@ import CardHome from "../../components/cards/CardHome";
 import { Row, Col, Container, Form } from "react-bootstrap";
 import { useContext } from "react";
 import { ProductosProvider } from "../../context/ProductsContext";
+import CarouselHome from "../../components/carrusel/CarouselHome";
+import CardSucursales from '../../components/cards/CardSucursales';
 
 
 const Home = () => {
@@ -43,6 +45,7 @@ const Home = () => {
 
   return (
     <>
+    <CarouselHome/>
       <Container>
         <Row>
           <Col md={9}>
@@ -101,6 +104,8 @@ const Home = () => {
           )}
         </div>
       </Container>
+
+     
 
 
     </>
