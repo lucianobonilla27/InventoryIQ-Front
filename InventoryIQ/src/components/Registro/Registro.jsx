@@ -68,7 +68,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
     if(!passwordRegex.test(usuario.password)) {
       swal.fire ({
         title: "Error",
-        text: "La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial.",
+        text: "La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial (@,$,!,%,*,?,&)",
         icon: "error",
         confirmButtonText: "Aceptar",
       });

@@ -88,7 +88,7 @@ const Navegador = () => {
             }}
           ></button>
         </Modal.Header>
-        <Modal.Body style={{ backgroundColor: "#DDE6ED", borderRadius: '0 0 8px 8px' }}>
+        <Modal.Body style={{ backgroundColor: "#DDE6ED", borderRadius: '0 0 8px 8px', margin: 0, padding: "30px" }}>
           <Login handleClose={handleCloseLogin} />
         </Modal.Body>
       </Modal>

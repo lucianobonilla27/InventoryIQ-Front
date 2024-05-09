@@ -62,6 +62,7 @@ const Login = ({ handleClose }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Ingrese su email"
+            required
             disabled={loading} // Deshabilitar el input durante la carga
           />
         </Form.Group>
@@ -73,6 +74,7 @@ const Login = ({ handleClose }) => {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             placeholder="Ingrese su contraseña"
+            required
             disabled={loading} // Deshabilitar el input durante la carga
           />
         </Form.Group>
