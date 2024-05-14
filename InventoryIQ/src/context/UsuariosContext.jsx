@@ -27,30 +27,26 @@ const UsuariosContext = ({children}) => {
 
     const addUser = async (usuario) => {
         try {
-
-            if (usuario.email === 'admin@admin.com' && usuario.password === 'Admin159@') {
-                usuario.isAdmin = true;
-            }
-
-            const response = await axios.post(`https://inventoryiq.onrender.com/api/register`, usuario);
+            let response = await axios.post(`https://inventoryiq.onrender.com/api/register`, usuario);
             setUsuarios([...usuarios, response.data]);
+            return response; // Devuelve la respuesta de la solicitud
         } catch (error) {
             console.log(error);
+            throw error; // Lanza el error para que pueda ser capturado en el componente
         }
-
-
-
     }
-
-
+    
     const editarUsuario = async (usuario) => {
         try {
-            await axios.patch(`https://inventoryiq.onrender.com/api/user/${usuario._id}`, usuario);
-            await getUsers();
+            let response = await axios.patch(`https://inventoryiq.onrender.com/api/user/${usuario._id}`, usuario);
+            await getUsers(); // Actualiza la lista de usuarios después de editar
+            return response; // Devuelve la respuesta de la solicitud
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            throw error; // Lanza el error para que pueda ser capturado en el componente
         }
     }
+    
 
     const deleteUsuarios = async (_id) => {
         try {

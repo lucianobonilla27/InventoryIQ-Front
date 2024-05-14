@@ -35,10 +35,9 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => { // Ahora es una función asíncrona
     e.preventDefault();
 
-    // Verificar si estamos en modo de edición y si los campos de contraseña están en blanco
     if (editUsuario && (!usuario.password || !usuario.repeatPasword)) {
       enviarFormulario();
       return;
@@ -75,43 +74,43 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
       return;
     }
 
-    enviarFormulario();
+    enviarFormulario(); // Llama a la función enviarFormulario
   };
 
-  const enviarFormulario = () => {
-    if (editUsuario) {
-      editarUsuario({...editUsuario, admin: usuario.admin});
+  const enviarFormulario = async () => {
+    try {
+      let response;
+      if (editUsuario) {
+        response = await editarUsuario({...editUsuario, admin: usuario.admin});
+      } else {
+        response = await addUser(usuario);
+      }
+
+      if (response.status === 201 || response.status === 200) { // Verifica el código de estado
+        swal.fire({
+          title: "Operación exitosa",
+          text: editUsuario ? "Usuario editado con éxito" : "Usuario registrado correctamente",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        });
+        setUsuario({
+          _id: uuidv4(),
+          name: "",
+          email: "",
+          password: "",
+          repeatPasword: "",
+          admin: false,
+        });
+      } else {
+        throw new Error("Hubo un problema al procesar la solicitud"); // Lanza un error si el código de estado no es 201
+      }
+    } catch (error) {
+      console.error("Error:", error);
       swal.fire({
-        title: "Usuario editado",
-        text: "Usuario editado con éxito",
-        icon: "success",
+        title: "Error",
+        text: error.message || "Hubo un problema al procesar la solicitud",
+        icon: "error",
         confirmButtonText: "Aceptar",
-        timer: 1500,
-      });
-      handleClose();
-      setUsuario({
-        _id: uuidv4(),
-        name: "",
-        email: "",
-        password: "",
-        repeatPasword: "",
-        admin: false,
-      });
-    } else {
-      addUser(usuario);
-      swal.fire({
-        title: "Registro exitoso",
-        text: "Usuario registrado correctamente",
-        icon: "success",
-        confirmButtonText: "Aceptar",
-      });
-      setUsuario({
-        _id: uuidv4(),
-        name: "",
-        email: "",
-        password: "",
-        repeatPasword: "",
-        admin: false,
       });
     }
   };

@@ -24,10 +24,13 @@ const ProductsContext = ({ children }) => {
       const response = await axios.post(
         "https://inventoryiq.onrender.com/api/agregarProduct",
         producto
-      ); 
+      );
       setProductos([...productos, response.data]);
-    } catch (error) {
+      return response; // Devuelve la respuesta de la solicitud
+    }catch (error) {
       console.log(error);
+      throw error; // Lanza el error para que pueda ser capturado en el componente
+
     }
   };
 
@@ -38,7 +41,7 @@ const ProductsContext = ({ children }) => {
       await axios.put(
         `https://inventoryiq.onrender.com/api/editarProduct/${producto._id}`,
         producto
-      ); 
+      );
 
       await getProductos();
     } catch (error) {
@@ -46,13 +49,13 @@ const ProductsContext = ({ children }) => {
     }
   };
 
- 
+
 
   const deleteProductos = async (_id) => {
-    
+
     try {
       await axios.delete(`https://inventoryiq.onrender.com/api/eliminarProduct/${_id}`);
-      setProductos(productos.filter((producto) => producto._id !== _id)); 
+      setProductos(productos.filter((producto) => producto._id !== _id));
     } catch (error) {
       console.log(error);
     }

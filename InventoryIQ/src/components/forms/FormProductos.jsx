@@ -14,75 +14,79 @@ const FormProductos = () => {
             imagenUrl: "",
             cantidad: 0,
             categoria: "",
-            fecha: new Date().toISOString().slice(0, 10) // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
+            fecha: new Date().toISOString().slice(0, 10)
         }
     )
 
     const handleChange = (e) => {
         setProducto({
-            ...producto, // recuperar los datos que tenemos actualmente en el estado.
-            [e.target.name]: e.target.value, // Actualizar el estado con el nuevo valor
+            ...producto,
+            [e.target.name]: e.target.value,
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validar que la cantidad sea un número positivo
         if (producto.cantidad < 0 || isNaN(producto.cantidad)) {
             alert('La cantidad debe ser un número positivo.');
             return;
         }
 
-        // Validar el formato de la fecha
         const fechaPattern = /^\d{4}-\d{2}-\d{2}$/;
         if (!fechaPattern.test(producto.fecha)) {
             alert('El formato de la fecha debe ser "YYYY-MM-DD".');
             return;
         }
 
-        // Utiliza la URL de la imagen proporcionada por el producto, o la imagen predeterminada si está en blanco
         const imagen =
             producto.imagenUrl.trim() !== ''
                 ? producto.imagenUrl
                 : 'https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
 
-        // Agrega el producto al contexto
-        addProductos({
-            ...producto,
-            _id: crypto.randomUUID(),
-            imagenUrl: imagen,
-        });
+        try {
+            const response = await addProductos({
+                ...producto,
+                _id: crypto.randomUUID(),
+                imagenUrl: imagen,
+            });
 
-        // Mostrar SweetAlert al agregar producto
-        Swal.fire({
-            title: 'Producto creado',
-            text: 'El producto se ha creado correctamente.',
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
-        });
+            console.log("Respuesta del backend:", response);
 
-        // Reinicia el estado para el próximo producto
-        setProducto({
-            _id: crypto.randomUUID(),
-            nombre: '',
-            descripcion: '',
-            imagenUrl: '',
-            cantidad: 0,
-            categoria: '',
-            fecha: new Date().toISOString().slice(0, 10), // Obtener la fecha actual y formatearla como "YYYY-MM-DD"
-        });
+            // Mostrar SweetAlert solo si la respuesta del backend es exitosa
+            Swal.fire({
+                title: 'Producto creado',
+                text: 'El producto se ha creado correctamente.',
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+            });
 
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
-       
+            setProducto({
+                _id: crypto.randomUUID(),
+                nombre: '',
+                descripcion: '',
+                imagenUrl: '',
+                cantidad: 0,
+                categoria: '',
+                fecha: new Date().toISOString().slice(0, 10),
+            });
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        } catch (error) {
+            console.error("Error al agregar producto:", error);
+            // Mostrar SweetAlert con el mensaje de error si ocurre un problema al agregar el producto
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un problema al agregar el producto.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+            });
+        }
     };
 
-
-    // Función para validar el formato de fecha "YYYY-MM-DD"
     const isValidDate = (dateString) => {
-        // Validación del formato de fecha "YYYY-MM-DD"
         const regex = /^\d{4}-\d{2}-\d{2}$/;
         return regex.test(dateString);
     };
