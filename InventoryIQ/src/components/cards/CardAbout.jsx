@@ -13,7 +13,7 @@ const CardAbout = () => {
             <Col xs={12} sm={6} md={4}>
               <Card className="card-hover mb-3">
                 <div className="circle-img">
-                  <Card.Img variant="top" src="./src/img/Luciano.jpg" className="img-fluid" />
+                  <Card.Img variant="top" src="/img/Luciano.jpg" className="img-fluid" />
                 </div>
                 <Card.Body>
                   <Card.Title style={{ fontWeight: 'bold' }}>Luciano Bonilla</Card.Title>
@@ -28,7 +28,7 @@ const CardAbout = () => {
             <Col xs={12} sm={6} md={4}>
               <Card className="card-hover mb-3">
                 <div className="circle-img">
-                  <Card.Img variant="top" src="./src/img/Facundo.jpg" className="img-fluid" />
+                  <Card.Img variant="top" src="/img/Facundo.jpg" className="img-fluid" />
                 </div>
                 <Card.Body>
                   <Card.Title style={{ fontWeight: 'bold' }}>Facundo Medina</Card.Title>
@@ -43,7 +43,7 @@ const CardAbout = () => {
             <Col xs={12} sm={6} md={4}>
               <Card className="card-hover mb-3">
                 <div className="circle-img">
-                  <Card.Img variant="top" src="./src/img/Lorena.jpg" className="img-fluid" />
+                  <Card.Img variant="top" src="/img/Lorena.jpg" className="img-fluid" />
                 </div>
                 <Card.Body>
                   <Card.Title style={{ fontWeight: 'bold' }}>Lorena Oterino</Card.Title>
@@ -63,7 +63,7 @@ const CardAbout = () => {
             <Col xs={12} sm={6} md={4}>
               <Card className="card-hover mb-3">
                 <div className="circle-img">
-                  <Card.Img variant="top" src="./src/img/Claudio.jpg" className="img-fluid" />
+                  <Card.Img variant="top" src="/img/Claudio.jpg" className="img-fluid" />
                 </div>
                 <Card.Body>
                   <Card.Title style={{ fontWeight: 'bold' }}>Claudio Joaquín</Card.Title>
@@ -78,7 +78,7 @@ const CardAbout = () => {
             <Col xs={12} sm={6} md={4}>
               <Card className="card-hover mb-3">
                 <div className="circle-img">
-                  <Card.Img variant="top" src="./src/img/Monica.jpg" className="img-fluid" />
+                  <Card.Img variant="top" src="/img/Monica.jpg" className="img-fluid" />
                 </div>
                 <Card.Body>
                   <Card.Title style={{ fontWeight: 'bold' }}>Mónica Ruíz</Card.Title>
@@ -93,7 +93,7 @@ const CardAbout = () => {
             <Col xs={12} sm={6} md={4}>
               <Card className="card-hover mb-3">
                 <div className="circle-img">
-                  <Card.Img variant="top" src="./src/img/Equipo.jpg" className="img-fluid" />
+                  <Card.Img variant="top" src="/img/Equipo.jpg" className="img-fluid" />
                 </div>
                 <Card.Body>
                   <Card.Title style={{ fontWeight: 'bold' }}>InventoryIQ</Card.Title>

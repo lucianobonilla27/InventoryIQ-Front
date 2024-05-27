@@ -33,12 +33,12 @@ const Contacto = () => {
       <Card.Title className='text-card m-1'>NUESTRAS REDES SOCIALES</Card.Title>
 
           <div className='text-center m-3'>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="../src/img/square-facebook.svg" className="icon"  fill="currentColor" alt="Facebook" /></a>
-            <a href="https://www.google.com/?hl=es" target="_blank" rel="noopener noreferrer"><img src="../src/img/google.svg" className="icon" alt="Google" /></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="../src/img/square-instagram.svg" className="icon" alt="Instagram" /></a>
-            <a href="https://web.telegram.org/" target="_blank" rel="noopener noreferrer"><img src="../src/img/telegram.svg" className="icon" alt="Telegram" /></a>
-            <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer"><img src="../src/img/square-x-twitter.svg" className="icon" alt="Twitter" /></a>
-            <a href="https://www.messenger.com/?locale=es_ES" target="_blank" rel="noopener noreferrer"><img src="../src/img/facebook-messenger.svg" className="icon" alt="Messenger" /></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="/img/square-facebook.svg" className="icon"  fill="currentColor" alt="Facebook" /></a>
+            <a href="https://www.google.com/?hl=es" target="_blank" rel="noopener noreferrer"><img src="/img/google.svg" className="icon" alt="Google" /></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="/img/square-instagram.svg" className="icon" alt="Instagram" /></a>
+            <a href="https://web.telegram.org/" target="_blank" rel="noopener noreferrer"><img src="/img/telegram.svg" className="icon" alt="Telegram" /></a>
+            <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer"><img src="/img/square-x-twitter.svg" className="icon" alt="Twitter" /></a>
+            <a href="https://www.messenger.com/?locale=es_ES" target="_blank" rel="noopener noreferrer"><img src="/img/facebook-messenger.svg" className="icon" alt="Messenger" /></a>
           </div>
           <Card.Title className='text-card m-1'>OTROS CANALES</Card.Title> 
           <DatosContacto />

@@ -18,7 +18,7 @@ const About = () => {
           </div>
           <Card style={{ width: '100%' }} className='card-about1'>
             <Card.Body>
-              <Card.Img variant="top" src="./src/img/About.jpg" />
+              <Card.Img variant="top" src="/img/About.jpg" />
             </Card.Body>
           </Card>
 

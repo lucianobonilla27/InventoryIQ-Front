@@ -30,7 +30,7 @@ const handleModalClose4 = () => setShowModal4(false);
   <Col xs={12} md={6} lg={3} className='mb-3'>
     {/* Primer botón con modal */}
     <Card>
-      <Card.Img variant="top" src="./src/img/Card 1.jpg" className="img-fluid" />
+      <Card.Img variant="top" src="/img/Card 1.jpg" className="img-fluid" />
       <Card.Body>
         <Card.Title className='title'>Rápida puesta en producción</Card.Title>
         <Button variant="primary" onClick={handleModalOpen1}>Ver más</Button>
@@ -41,7 +41,7 @@ const handleModalClose4 = () => setShowModal4(false);
   <Col xs={12} md={6} lg={3} className='mb-3'>
     {/* Segundo botón con modal */}
     <Card>
-      <Card.Img variant="top" src="./src/img/Card 2.jpg" className="img-fluid" />
+      <Card.Img variant="top" src="/img/Card 2.jpg" className="img-fluid" />
       <Card.Body>
         <Card.Title className='title'>Adaptaciones a medida</Card.Title>
         <Button variant="primary" onClick={handleModalOpen2}>Ver más</Button>
@@ -52,7 +52,7 @@ const handleModalClose4 = () => setShowModal4(false);
   <Col xs={12} md={6} lg={3} className='mb-3'>
     {/* Tercer botón con modal */}
     <Card>
-      <Card.Img variant="top" src="./src/img/Card 3.jpg" className="img-fluid" />
+      <Card.Img variant="top" src="/img/Card 3.jpg" className="img-fluid" />
       <Card.Body>
         <Card.Title className='title'>Reportes y alertas detallados</Card.Title>
       
@@ -64,7 +64,7 @@ const handleModalClose4 = () => setShowModal4(false);
   <Col xs={12} md={6} lg={3} className='mb-3'>
     {/* Cuarto botón con modal */}
     <Card>
-      <Card.Img variant="top" src="./src/img/Card 4.jpg" className="img-fluid" />
+      <Card.Img variant="top" src="/img/Card 4.jpg" className="img-fluid" />
       <Card.Body>
         <Card.Title className='title'>Soporte técnico y asesoramiento</Card.Title>
       

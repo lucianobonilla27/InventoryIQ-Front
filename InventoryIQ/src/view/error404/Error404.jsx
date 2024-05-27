@@ -13,7 +13,7 @@ const Error404 = () => {
             <h5>Ups!...Ésta página no está disponible</h5>
             </div>
                   
-                    <img src="./src/img/error.jpg" alt="error"  className="img-error"/>
+                    <img src="/img/error.jpg" alt="error"  className="img-error"/>
                     
                 </Col>
                 <Col className="text-center">
