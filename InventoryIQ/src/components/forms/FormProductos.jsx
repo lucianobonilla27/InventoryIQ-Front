@@ -19,19 +19,23 @@ const FormProductos = () => {
     )
 
     const handleChange = (e) => {
+        const { name, value } = e.target;
         setProducto({
             ...producto,
-            [e.target.name]: e.target.value,
+            [name]: name === "cantidad" ? parseInt(value) : value,
         });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if (producto.cantidad < 0 || isNaN(producto.cantidad)) {
+    
+        const cantidadNumber = parseInt(producto.cantidad);
+        if (cantidadNumber < 0 || isNaN(cantidadNumber)) {
             alert('La cantidad debe ser un número positivo.');
             return;
-        }
+        }   
+    
+        
 
         const fechaPattern = /^\d{4}-\d{2}-\d{2}$/;
         if (!fechaPattern.test(producto.fecha)) {
@@ -44,9 +48,11 @@ const FormProductos = () => {
                 ? producto.imagenUrl
                 : 'https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
 
+        const productoConCantidadNumerica = { ...producto, cantidad: cantidadNumber }; // realizo esto ya que react los campos de formulario en React se manejan como cadenas de texto por defecto
+
         try {
             const response = await addProductos({
-                ...producto,
+                ...productoConCantidadNumerica,
                 _id: crypto.randomUUID(),
                 imagenUrl: imagen,
             });
