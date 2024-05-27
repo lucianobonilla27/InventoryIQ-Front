@@ -22,7 +22,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
     name: editUsuario ? editUsuario.name : "",
     email: editUsuario ? editUsuario.email : "",
     password: "",
-    repeatPasword: "",
+    repeatPassword: "",
     admin: editUsuario ? editUsuario.admin : false,
   });
 
@@ -38,12 +38,12 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
   const handleSubmit = async (e) => { // Ahora es una función asíncrona
     e.preventDefault();
 
-    if (editUsuario && (!usuario.password || !usuario.repeatPasword)) {
+    if (editUsuario && (!usuario.password || !usuario.repeatPassword)) {
       enviarFormulario();
       return;
     }
 
-    if (!usuario.name || !usuario.email || !usuario.password || !usuario.repeatPasword) {
+    if (!usuario.name || !usuario.email || !usuario.password || !usuario.repeatPassword) {
       swal.fire ({
         title: "Error",
         text: "Por favor, complete todos los campos",
@@ -53,7 +53,7 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
       return;
     }
 
-    if (usuario.password !== usuario.repeatPasword) {
+    if (usuario.password !== usuario.repeatPassword) {
       swal.fire ({
         title: "Error",
         text: "Las contraseñas no coinciden",
@@ -81,12 +81,12 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
     try {
       let response;
       if (editUsuario) {
-        response = await editarUsuario({...editUsuario, admin: usuario.admin});
+        response = await editarUsuario({ ...editUsuario, admin: usuario.admin });
       } else {
         response = await addUser(usuario);
       }
-
-      if (response.status === 201 || response.status === 200) { // Verifica el código de estado
+  
+      if (response.status === 201 || response.status === 200) {
         swal.fire({
           title: "Operación exitosa",
           text: editUsuario ? "Usuario editado con éxito" : "Usuario registrado correctamente",
@@ -98,22 +98,26 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
           name: "",
           email: "",
           password: "",
-          repeatPasword: "",
+          repeatPassword: "",
           admin: false,
         });
       } else {
-        throw new Error("Hubo un problema al procesar la solicitud"); // Lanza un error si el código de estado no es 201
+        // Intenta leer el cuerpo de la respuesta como JSON para obtener detalles adicionales sobre el error.
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Hubo un problema al procesar la solicitud");
       }
     } catch (error) {
       console.error("Error:", error);
       swal.fire({
         title: "Error",
-        text: error.message || "Hubo un problema al procesar la solicitud",
+        text: error.response?.data?.message || error.message || "Hubo un problema al procesar la solicitud",
         icon: "error",
         confirmButtonText: "Aceptar",
       });
     }
   };
+  
+  
 
   return (
     <Container className="registro-container">
@@ -159,9 +163,9 @@ const RegistroFormulario = ({ editUsuario, handleClose }) => {
               <Form.Control
                 type="password"
                 placeholder="Repite tu contraseña"
-                value={usuario.repeatPasword}
+                value={usuario.repeatPassword}
                 onChange={handleChange}
-                name="repeatPasword"
+                name="repeatPassword"
                 disabled={editUsuario ? true : false}
               />
             </Form.Group>
