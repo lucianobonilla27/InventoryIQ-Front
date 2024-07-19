@@ -7,7 +7,7 @@ InventoryIQ es una aplicación web diseñada para facilitar la gestión del cont
 Para utilizar todas las funcionalidades de la aplicación, puedes ingresar como administrador:
 
 **Usuario:** admin@admin.com  
-**Contraseña:** Admin
+**Contraseña:** admin
 
 ## Tecnologías Utilizadas
 
@@ -56,14 +56,6 @@ Para iniciar el frontend, ejecuta el siguiente comando en el directorio `Invento
 
 Esto iniciará el servidor de desarrollo en [http://localhost:5173](http://localhost:5173).
 
-### Backend
-Para iniciar el backend, ejecuta el siguiente comando en el directorio `InventoryIQ-Back`:
-
-    ```sh
-    npm run server
-    ```
-
-Esto iniciará el servidor backend en [http://localhost:7000](http://localhost:7000).
 
 ## Uso
 Una vez que la aplicación esté instalada y en ejecución, podrás acceder a ella a través de tu navegador web. Registra tus usuarios, administra los productos y disfruta de todas las características que ofrece InventoryIQ.
